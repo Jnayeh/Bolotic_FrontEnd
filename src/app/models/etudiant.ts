@@ -3,7 +3,7 @@ import { User } from "./user";
 export class Etudiant extends User{
 
     
-    cin: Number;
+    cin: any;
     universite: String;
     constructor(){
         super();
