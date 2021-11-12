@@ -5,6 +5,7 @@ export class User {
     email: String;
     num_tel: any;
     mot_de_passe: String;
+    new_mot_de_passe: String;
     mot_de_passe_confirmation: String;
     suspended: Boolean;
     photo: any;
@@ -17,6 +18,7 @@ export class User {
         this.email = '';
         this.num_tel = null;
         this.mot_de_passe = '';
+        this.new_mot_de_passe = '';
         this.mot_de_passe_confirmation = '';
         this.suspended = false;
         this.photo = null;
