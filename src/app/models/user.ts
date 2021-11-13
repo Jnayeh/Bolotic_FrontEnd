@@ -1,5 +1,5 @@
 export class User {
-    id:any;
+    _id:any;
     nom: String;
     prenom: String;
     email: String;
@@ -12,7 +12,7 @@ export class User {
     date_creation: Date;
 
     constructor() {
-        this.id = null;
+        this._id = null;
         this.nom = '';
         this.prenom = '';
         this.email = '';

@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Bolotic-FrontEnd';
-  constructor(){
+  constructor( ){
 
   }
   ngOnInit(): void {
-    
+   
   }
 }

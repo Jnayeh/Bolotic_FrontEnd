@@ -16,24 +16,20 @@ export class AdministrateurService {
 
   // Return list of recruiters
   public get(id: any): Observable<any> {
-    return this.httpClient.get<Administrateur>(this.url + '/administrateur/' + id);
+    return this.httpClient.get<Administrateur>(this.url + '/admin/' + id);
   }
 
   // enters Recruiter object
   // Return Token
   public logIn(administrateur: Administrateur): Observable<any> {
-    return this.httpClient.post(this.url + '/loginAdministrateur', administrateur);
+    return this.httpClient.post(this.url + '/loginAdmin', administrateur);
   }
 
 
   // enters Formdat object
   // Return Recruiter object
   public update(administrateur: FormData, id: any): Observable<any> {
-    return this.httpClient.put(this.url + '/administrateurs/update/' + id, administrateur);
+    return this.httpClient.put(this.url + '/admins/update/' + id, administrateur);
   }
 
-  // Return success message
-  public delete(id: any): Observable<any> {
-    return this.httpClient.delete(this.url + '/administrateurs/delete/' + id);
-  }
 }
