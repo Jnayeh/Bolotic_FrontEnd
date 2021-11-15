@@ -59,7 +59,7 @@ export class InscritRecruteurComponent implements OnInit {
     var f = new FormData;
     f.append('recruteur', JSON.stringify(this.recruteur));
     f.append('pdp', this.fileToUpload);
-    f.append('logo_societe', this.fileToUpload);
+    f.append('logo_societe', this.logoToUpload);
     this.recruteurService.register(f).subscribe(res => {
       this._snackBar.open("Succes", "Close", {
         duration: 1000
