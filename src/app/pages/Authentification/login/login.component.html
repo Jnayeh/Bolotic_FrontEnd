@@ -3,15 +3,14 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<body>
-  <div class="container">
-    <span class="mytext1">Bienvenue dans </span>
-    <span class="mytext2"> Bolotic </span>
-
-    <div>
-      <a href="/LogIn">Se connecter</a>
-    </div>
-  </div>
-  
-</body>
+<h1 class="title">
+    Connexion
+</h1>
+<form>
+  <mat-tab-group>
+    <mat-tab label="Connexion Etudiant"> <app-login-etudiant></app-login-etudiant></mat-tab>
+    <mat-tab label="Connexion Recruteur"> <app-login-recruteur></app-login-recruteur> </mat-tab>
+    
+  </mat-tab-group>
+</form>
 

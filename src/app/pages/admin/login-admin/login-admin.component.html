@@ -1,0 +1,32 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<h1 class="title">
+  Login Admin
+</h1>
+<form>
+
+  <label>
+    <p class="label-txt">Saisie votre email</p>
+    <input type="text" class="input" [(ngModel)]="admin.email" name="email" #email="ngModel" required>
+    <div class="line-box" [ngClass]="{'invalid': email.dirty && email.invalid}">
+      <div class="line"></div>
+    </div>
+  </label>
+
+
+  <label>
+    <p class="label-txt">Saisie votre mot de passe</p>
+    <input type="password" class="input" [(ngModel)]="admin.mot_de_passe" name="mot_de_passe"
+      #mot_de_passe="ngModel" minlength="6" required>
+    <div class="line-box" [ngClass]="{'invalid': mot_de_passe.dirty && mot_de_passe.invalid}">
+      <div class="line"></div>
+    </div>
+  </label>
+
+
+  <button type="submit" (click)="logIn()" #submit [disabled]="email.invalid || mot_de_passe.invalid"
+    [ngClass]="{'disabled': submit.disabled}">Se connecter</button>
+</form>

@@ -3,35 +3,88 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-
+<h1 class="title">
+  Inscription Etudiant
+</h1>
 <form>
+  <div style="display: flex; justify-content:space-between;">
+    <div style="width: 49%;">
+      <label>
+        <p class="label-txt">Saisie votre nom</p>
+        <input type="text" class="input" [(ngModel)]="etudiant.nom" name="nom"
+        #nom="ngModel" required>
+        <div class="line-box" [ngClass]="{'invalid': nom.dirty && nom.invalid}">
+          <div class="line"></div>
+        </div>
+      </label>
+    </div>
+    <div style="width: 49%;">
+      <label>
+        <p class="label-txt">Saisie votre prenom</p>
+        <input type="text" class="input" [(ngModel)]="etudiant.prenom" name="prenom"
+        #prenom="ngModel" required>
+        <div class="line-box" [ngClass]="{'invalid': prenom.dirty && prenom.invalid}">
+          <div class="line"></div>
+        </div>
+      </label>
+    </div>
+  </div>
   <label>
-    <p class="label-txt">Saisie votre mail</p>
-    <input type="text" class="input">
-    <div class="line-box">
-      <div class="line"></div>
+    <p class="label-txt">Saisie votre email</p>
+    <input type="text" class="input" [(ngModel)]="etudiant.email" name="email"
+    #email="ngModel" required>
+    <div class="line-box" [ngClass]="{'invalid': email.dirty && email.invalid}">
+      <div class="line" ></div>
     </div>
   </label>
   <label>
-    <p class="label-txt">Saisie votre nom</p>
-    <input type="text" class="input">
-    <div class="line-box">
-      <div class="line"></div>
+    <span class="photo-txt">Photo</span>
+    <div class="button-wrapper">
+      <span class="label">
+        Telecharger photo
+      </span>
+      <input type="file" name="upload" id="upload" accept=".jpg,.png,.jpeg" class="upload-box"
+        placeholder="Telecharger logo" (change)="handleFileInput($event)">
     </div>
+    <div style="display: flex; justify-content:space-around">
+      <img id="photo" [src]="etudiant.photo" style="border-radius: 15px; margin: 8px;display: none;" height="100px">
+    </div>
+    
   </label>
   <label>
-    <p class="label-txt">Saisie votre mot de passe</p>
-    <input type="text" class="input">
-    <div class="line-box">
+    <p class="label-txt">Saisie votre numéro</p>
+    <input type="number" class="input" [(ngModel)]="etudiant.num_tel" name="num_tel"
+    #num_tel="ngModel" pattern="[0-9]{8}$" required>
+    <div class="line-box" [ngClass]="{'invalid': num_tel.dirty && num_tel.invalid}">
       <div class="line"></div>
     </div>
   </label>
   <label>
     <p class="label-txt">Saisie votre université</p>
-    <input type="text" class="input">
-    <div class="line-box">
+    <input type="text" class="input" [(ngModel)]="etudiant.universite" name="universite"
+    #universite="ngModel" required>
+    <div class="line-box" [ngClass]="{'invalid': universite.dirty && universite.invalid}">
       <div class="line"></div>
     </div>
   </label>
-  <button type="submit">submit</button>
+  <label>
+    <p class="label-txt">Saisie votre mot de passe</p>
+    <input type="password" class="input" [(ngModel)]="etudiant.mot_de_passe" name="mot_de_passe"
+    #mot_de_passe="ngModel" minlength="6" required>
+    <div class="line-box" [ngClass]="{'invalid': mot_de_passe.dirty && mot_de_passe.invalid}">
+      <div class="line"></div>
+    </div>
+  </label>
+  
+  <label>
+    <p class="label-txt">Confirmer votre mot de passe</p>
+    <input type="password" class="input" [(ngModel)]="etudiant.mot_de_passe_confirmation" name="mot_de_passe_confirmation"
+    #mot_de_passe_confirmation="ngModel" pattern="{{etudiant.mot_de_passe}}" required>
+    <div class="line-box" [ngClass]="{'invalid': mot_de_passe.dirty && mot_de_passe_confirmation.invalid}">
+      <div class="line"></div>
+    </div>
+  </label>
+  <button type="submit" (click)="signUp()" #submit
+  [disabled]="nom.invalid || prenom.invalid || email.invalid || universite.invalid || num_tel.invalid || mot_de_passe.invalid
+            || mot_de_passe_confirmation.invalid" [ngClass]="{'disabled': submit.disabled}">S'inscrire</button>
 </form>
