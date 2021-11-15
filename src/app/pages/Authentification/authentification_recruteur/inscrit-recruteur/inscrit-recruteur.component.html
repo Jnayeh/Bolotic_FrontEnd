@@ -38,7 +38,7 @@
     <mat-slide-toggle [(ngModel)]="pro" name="pro" class="photo-txt">Professional</mat-slide-toggle>
   
   <label *ngIf="pro == false, else professional">
-    <span class="photo-txt">Photo</span>
+    
     <div class="button-wrapper">
       <span class="label">
         Telecharger photo
@@ -53,10 +53,9 @@
   </label>
   <ng-template #professional>
     <label>
-      <span class="photo-txt">Logo</span>
       <div class="button-wrapper">
         <span class="label">
-          Telecharger logo
+          Telecharger logo societe
         </span>
         <input type="file" name="upload" id="upload" accept=".jpg,.png,.jpeg" class="upload-box"
           placeholder="Telecharger logo" (change)="handleLogoInput($event)">
