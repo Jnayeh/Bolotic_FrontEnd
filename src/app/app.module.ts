@@ -23,6 +23,9 @@ import { LoginRecruteurComponent } from './pages/Authentification/authentificati
 import { LoginEtudiantComponent } from './pages/Authentification/authentification_etudiant/login-etudiant/login-etudiant.component';
 import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
 import { LoginComponent } from './pages/Authentification/login/login.component';
+import { AjoutBoulotComponent } from './pages/recruteur/home-recruteur/ajout-boulot/ajout-boulot.component';
+
+
 
 
 @NgModule({
@@ -38,6 +41,7 @@ import { LoginComponent } from './pages/Authentification/login/login.component';
     LoginEtudiantComponent,
     LoginAdminComponent,
     LoginComponent,
+    AjoutBoulotComponent
   ],
   imports: [
     BrowserModule,
