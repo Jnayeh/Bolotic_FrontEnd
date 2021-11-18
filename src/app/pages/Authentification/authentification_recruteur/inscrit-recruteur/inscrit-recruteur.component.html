@@ -47,7 +47,7 @@
         placeholder="Telecharger photo" (change)="handleFileInput($event)">
     </div>
     <div style="display: flex; justify-content:space-around">
-      <img id="photo" [src]="recruteur.photo" style="border-radius: 15px; margin: 8px;display: none;" height="100px">
+      <img id="photo" [src]="photo" style="border-radius: 15px; margin: 8px;display: none;" height="100px">
     </div>
 
   </label>
@@ -61,7 +61,7 @@
           placeholder="Telecharger logo" (change)="handleLogoInput($event)">
       </div>
       <div style="display: flex; justify-content:space-around">
-        <img id="logo" [src]="recruteur.logo_societe" style="border-radius: 15px; margin: 8px;display: none;"
+        <img id="logo" [src]="logo" style="border-radius: 15px; margin: 8px;display: none;"
           height="100px">
       </div>
 

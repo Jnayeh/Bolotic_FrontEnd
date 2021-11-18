@@ -22,6 +22,8 @@ export class InscritRecruteurComponent implements OnInit {
   fileToUpload: any;
   logoToUpload: any;
   pro = false;
+  photo:any;
+  logo:any;
   
 
   handleFileInput(event: Event) {
@@ -31,7 +33,7 @@ export class InscritRecruteurComponent implements OnInit {
     const reader = new FileReader();
     reader.readAsDataURL(this.fileToUpload);
     reader.onload = () => {
-      this.recruteur.photo = reader.result;
+      this.photo = reader.result;
       const p = document.getElementById('photo');
       if (p) {
         p.style.display = "block";
@@ -46,7 +48,7 @@ export class InscritRecruteurComponent implements OnInit {
     const reader = new FileReader();
     reader.readAsDataURL(this.logoToUpload);
     reader.onload = () => {
-      this.recruteur.logo_societe = reader.result;
+      this.logo = reader.result;
       const p = document.getElementById('logo');
       if (p) {
         p.style.display = "block";

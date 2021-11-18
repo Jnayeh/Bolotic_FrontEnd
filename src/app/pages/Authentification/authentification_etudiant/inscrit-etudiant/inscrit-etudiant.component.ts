@@ -13,6 +13,7 @@ export class InscritEtudiantComponent implements OnInit {
 
   etudiant = new Etudiant;
   fileToUpload: any;
+  photo: any;
   constructor(private etudiantService: EtudiantService, private _snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
@@ -25,7 +26,7 @@ export class InscritEtudiantComponent implements OnInit {
     const reader = new FileReader();
     reader.readAsDataURL(this.fileToUpload);
     reader.onload = () => {
-      this.etudiant.photo = reader.result;
+      this.photo = reader.result;
       const p = document.getElementById('photo');
       if (p) {
         p.style.display = "block";
