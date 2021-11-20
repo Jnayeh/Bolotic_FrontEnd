@@ -1,15 +1,17 @@
 <form>
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
+    <label for="LabelTitre">Titre</label>
+    <input type="text" class="form-control" id="Titre" #Titre [(ngModel)]="ajoutboulot.titre"  #nom="ngModel" required>
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="Password">
+    <label for="LabelDesc">Description du boulot</label>
+    <input type="text" class="form-control" id="Description" placeholder="Description du boulot" [(ngModel)]="ajoutboulot.description" required >
   </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+  <div class="form-group">
+    <label for="LabelDateFin">Date Fin du boulot</label>
+    <input type="date" class="form-control" id="DateFin" [(ngModel)]="ajoutboulot.datefin" required>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <button type="submit" (click)="AddBoulot()">Se connecter</button>
 </form>

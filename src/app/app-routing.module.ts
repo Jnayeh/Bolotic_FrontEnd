@@ -8,6 +8,7 @@ import { InscritRecruteurComponent } from './pages/Authentification/authentifica
 import { LoginRecruteurComponent } from './pages/Authentification/authentification_recruteur/login-recruteur/login-recruteur.component';
 import { LoginComponent } from './pages/Authentification/login/login.component';
 import { HomeEtudiantComponent } from './pages/etudiant/home-etudiant/home-etudiant.component';
+import { AjoutBoulotComponent } from './pages/recruteur/ajout-boulot/ajout-boulot.component';
 import { HomeRecruteurComponent } from './pages/recruteur/home-recruteur/home-recruteur.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
@@ -34,9 +35,9 @@ const routes: Routes = [
       { path: 'home', component: HomeRecruteurComponent },
       { path: 'profil', component: WelcomeComponent },
       {
-        path: 'bolos', component: WelcomeComponent,
+        path: 'bolos', component: AjoutBoulotComponent,
         children: [
-          { path: 'ajout', component: WelcomeComponent },
+          { path: 'ajout', component: AjoutBoulotComponent},
           { path: ':id', component: WelcomeComponent },
           { path: 'modifier/:id', component: WelcomeComponent }
         ],
