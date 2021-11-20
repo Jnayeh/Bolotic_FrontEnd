@@ -10,7 +10,7 @@ export class User {
     suspended: Boolean;
     photo: any;
     date_creation: Date;
-
+  
     constructor() {
         this._id = null;
         this.nom = '';
@@ -23,7 +23,7 @@ export class User {
         this.suspended = false;
         this.photo = null;
         this.date_creation = new  Date();
-    
+        
     
       }
 }
