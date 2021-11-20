@@ -12,7 +12,9 @@ export class AppComponent {
   }
   ngOnInit(): void {
     const token = sessionStorage.getItem('token');
-    console.log(this.parseJwt(token));
+    if(token){
+      console.log(this.parseJwt(token));
+    }
   }
   
   parseJwt(token: any) {
