@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { AjoutboulotService } from 'src/app/api/ajoutboulot.service';
+import { BoulotService } from 'src/app/api/boulot.service';
 import { Boulot } from 'src/app/models/boulot';
 
 @Component({
@@ -11,7 +11,7 @@ import { Boulot } from 'src/app/models/boulot';
 })
 export class AjoutBoulotComponent implements OnInit {
 
-  constructor( private AjoutboulotService: AjoutboulotService, private _snackBar: MatSnackBar,private router: Router) { }
+  constructor( private BoulotService: BoulotService, private _snackBar: MatSnackBar,private router: Router) { }
 
   ngOnInit(): void {
     
@@ -32,14 +32,12 @@ export class AjoutBoulotComponent implements OnInit {
   };
 
   AddBoulot(){
-    var f = new FormData;
-    f.append('ajoutboulot', JSON.stringify(this.ajoutboulot));
-    console.log(this.ajoutboulot.description);
-    this.AjoutboulotService.register(f).subscribe(res => {
+    
+    this.BoulotService.add(this.ajoutboulot).subscribe(res => {
       this._snackBar.open("Succes", "Close", {
         duration: 1000
       });
-      sessionStorage.setItem("token",res);
+      console.log("Boulot :",res)
       this.router.navigate(['/recruteur/home']);
     }, err => {
       this._snackBar.open(err.error, "Close", {
