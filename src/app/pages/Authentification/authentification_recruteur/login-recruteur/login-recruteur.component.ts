@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecruteurService } from 'src/app/api/recruteur.service';
 import { Recruteur } from 'src/app/models/recruteur';
 
@@ -12,7 +12,11 @@ import { Recruteur } from 'src/app/models/recruteur';
 export class LoginRecruteurComponent implements OnInit {
 
   recruteur= new Recruteur;
-  constructor( private recruteurService: RecruteurService, private _snackBar:MatSnackBar,private router:Router) { }
+  constructor( 
+    private recruteurService: RecruteurService, 
+    private _snackBar:MatSnackBar,
+    private router:Router,
+    private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
   }
@@ -23,8 +27,10 @@ export class LoginRecruteurComponent implements OnInit {
       this._snackBar.open("Succes", "Close", {
         duration: 1000
       });
-      sessionStorage.setItem("token",res);
-      this.router.navigate(['/recruteur/home']);
+      
+      const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/recruteur/home';
+      this.router.navigate([returnUrl]);
+      
     }, err => {
       this._snackBar.open(err.error, "Close", {
         duration: 2000

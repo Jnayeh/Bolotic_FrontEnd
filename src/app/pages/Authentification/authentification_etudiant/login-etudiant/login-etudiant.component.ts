@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EtudiantService } from 'src/app/api/etudiant.service';
 import { Etudiant } from 'src/app/models/etudiant';
 
@@ -12,7 +12,11 @@ import { Etudiant } from 'src/app/models/etudiant';
 export class LoginEtudiantComponent implements OnInit {
   etudiant= new Etudiant;
 
-  constructor( private etudiantService: EtudiantService, private _snackBar:MatSnackBar,private router:Router) { }
+  constructor( 
+    private etudiantService: EtudiantService,
+    private _snackBar:MatSnackBar,
+    private router:Router,
+    private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
   }
@@ -24,8 +28,8 @@ export class LoginEtudiantComponent implements OnInit {
       this._snackBar.open("Succes", "Close", {
         duration: 1000
       });
-      sessionStorage.setItem("token",res);
-      this.router.navigate(['/etudiant/home']);
+      const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/etudiant/home';
+      this.router.navigate([returnUrl]);
     }, err => {
       this._snackBar.open(err.error, "Close", {
         duration: 2000

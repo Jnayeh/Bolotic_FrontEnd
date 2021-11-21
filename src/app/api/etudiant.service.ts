@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Etudiant } from '../models/etudiant';
+import { TokenService } from './token.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +12,7 @@ export class EtudiantService {
   private url = environment.baseUrl;
   constructor(
     private httpClient: HttpClient,
+    private tokenService: TokenService,
   ) { }
 
 
@@ -27,13 +29,23 @@ export class EtudiantService {
   // enters Recruiter object
   // Return Token
   public logIn(etudiant: Etudiant): Observable<any> {
-    return this.httpClient.post(this.url + '/loginEtudiant', etudiant);
+    return this.httpClient.post(this.url + '/loginEtudiant', etudiant).pipe(map((token: any) => {
+      // store jwt token in local storage to keep user logged in between page refreshes
+      localStorage.setItem('token', token);
+      this.tokenService.nextToken(token);
+      return token;
+    }));
   }
 
   // enters Formdat object
   // Return Token
   public register(etudiant: FormData): Observable<any> {
-    return this.httpClient.post(this.url + '/registerEtudiant', etudiant);
+    return this.httpClient.post(this.url + '/registerEtudiant', etudiant).pipe(map((token: any) => {
+      // store jwt token in local storage to keep user logged in between page refreshes
+      localStorage.setItem('token', token);
+      this.tokenService.nextToken(token);
+      return token;
+    }));
   }
 
   // enters Formdat object

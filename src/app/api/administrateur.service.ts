@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Administrateur } from '../models/administrateur';
+import { TokenService } from './token.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +12,7 @@ export class AdministrateurService {
   private url = environment.baseUrl;
   constructor(
     private httpClient: HttpClient,
+    private tokenService: TokenService,
   ) { }
 
 
@@ -22,7 +24,12 @@ export class AdministrateurService {
   // enters Recruiter object
   // Return Token
   public logIn(administrateur: Administrateur): Observable<any> {
-    return this.httpClient.post(this.url + '/loginAdmin', administrateur);
+    return this.httpClient.post(this.url + '/loginAdmin', administrateur).pipe(map((token: any) => {
+      // store jwt token in local storage to keep user logged in between page refreshes
+      localStorage.setItem('token', token);
+      this.tokenService.nextToken(token);
+      return token;
+    }));
   }
 
 

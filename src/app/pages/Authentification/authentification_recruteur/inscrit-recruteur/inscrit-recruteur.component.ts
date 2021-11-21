@@ -66,7 +66,6 @@ export class InscritRecruteurComponent implements OnInit {
       this._snackBar.open("Succes", "Close", {
         duration: 1000
       });
-      sessionStorage.setItem("token",res);
       this.router.navigate(['/recruteur/home']);
     }, err => {
       this._snackBar.open(err.error, "Close", {
