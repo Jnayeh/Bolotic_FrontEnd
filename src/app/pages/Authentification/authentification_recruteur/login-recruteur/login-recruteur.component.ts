@@ -32,9 +32,16 @@ export class LoginRecruteurComponent implements OnInit {
       this.router.navigate([returnUrl]);
       
     }, err => {
+      if(err=="Bad Request"){
+        this._snackBar.open("Invalid credentials", "Close", {
+          duration: 2000
+        });
+      }
+     else{
       this._snackBar.open(err.error, "Close", {
         duration: 2000
       });
+     }
     })
   }
 }

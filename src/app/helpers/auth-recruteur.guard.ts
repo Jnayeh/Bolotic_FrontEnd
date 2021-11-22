@@ -6,7 +6,7 @@ import { TokenService } from '../api/token.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class AuthRecruteurGuard implements CanActivate {
   constructor(
     private router: Router,
     private tokenService: TokenService) {
@@ -15,8 +15,9 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const token = this.tokenService.currentToken()
-    if (token) {
+    const token = this.tokenService.currentToken();
+    const decodedToken= this.tokenService.decodedToken();
+    if (token && decodedToken.role=="recruteur") {
       // logged in so return true
       return true;
     }

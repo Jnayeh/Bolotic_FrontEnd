@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './helpers/auth.guard';
+import { AuthAdminGuard } from './helpers/auth-admin.guard';
+import { AuthEtudiantGuard } from './helpers/auth-etudiant.guard';
+import { AuthRecruteurGuard } from './helpers/auth-recruteur.guard';
+
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
 import { InscritEtudiantComponent } from './pages/Authentification/authentification_etudiant/inscrit-etudiant/inscrit-etudiant.component';
@@ -21,7 +24,7 @@ const routes: Routes = [
   { path: 'LogIn', component: LoginComponent },
 
   {
-    path: 'etudiant', canActivate: [AuthGuard],
+    path: 'etudiant', canActivate: [AuthEtudiantGuard],
     children: [
       { path: 'home', component: HomeEtudiantComponent },
       { path: 'profil', component: WelcomeComponent },
@@ -31,7 +34,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'recruteur',canActivate: [AuthGuard],
+    path: 'recruteur',canActivate: [AuthRecruteurGuard],
     children: [
       { path: 'home', component: HomeRecruteurComponent },
       { path: 'profil', component: WelcomeComponent },
@@ -49,7 +52,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'admin',
+    path: 'admin', canActivate: [AuthAdminGuard],
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'profil', component: WelcomeComponent },
@@ -60,6 +63,7 @@ const routes: Routes = [
 
     ],
   },
+  { path: '**', redirectTo:'' },
 ];
 
 @NgModule({

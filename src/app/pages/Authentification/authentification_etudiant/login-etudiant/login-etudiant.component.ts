@@ -31,9 +31,16 @@ export class LoginEtudiantComponent implements OnInit {
       const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/etudiant/home';
       this.router.navigate([returnUrl]);
     }, err => {
+      if(err=="Bad Request"){
+        this._snackBar.open("Invalid credentials", "Close", {
+          duration: 2000
+        });
+      }
+     else{
       this._snackBar.open(err.error, "Close", {
         duration: 2000
       });
+     }
     })
   }
 

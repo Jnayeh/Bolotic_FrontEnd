@@ -20,17 +20,6 @@ export class AjoutBoulotComponent implements OnInit {
   ajoutboulot = new Boulot();
   
 
-
-  parseJwt(token: any) {
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
-      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-
-    return JSON.parse(jsonPayload);
-  };
-
   AddBoulot(){
     
     this.BoulotService.add(this.ajoutboulot).subscribe(res => {
@@ -38,9 +27,9 @@ export class AjoutBoulotComponent implements OnInit {
         duration: 1000
       });
       console.log("Boulot :",res)
-      this.router.navigate(['/recruteur/home']);
+      this.router.navigate(['/recruteur/profil']);
     }, err => {
-      this._snackBar.open(err.error, "Close", {
+      this._snackBar.open(err, "Close", {
         duration: 2000
       });
     })
