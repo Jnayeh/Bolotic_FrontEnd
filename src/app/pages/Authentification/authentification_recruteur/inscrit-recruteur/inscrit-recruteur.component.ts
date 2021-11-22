@@ -62,15 +62,20 @@ export class InscritRecruteurComponent implements OnInit {
     f.append('recruteur', JSON.stringify(this.recruteur));
     f.append('pdp', this.fileToUpload);
     f.append('logo_societe', this.logoToUpload);
-    this.recruteurService.register(f).subscribe(res => {
-      this._snackBar.open("Succes", "Close", {
-        duration: 1000
-      });
-      this.router.navigate(['/recruteur/home']);
-    }, err => {
-      this._snackBar.open(err.error, "Close", {
-        duration: 2000
-      });
-    })
+    this.recruteurService.register(f).subscribe(
+      {
+        next: res => {
+          this._snackBar.open("Succes", "Close", {
+            duration: 1000
+          });
+          this.router.navigate(['/recruteur/home']);
+        },
+        error: err => {
+          this._snackBar.open(err.error, "Close", {
+            duration: 2000
+          });
+        }
+      }
+       )
   }
 }

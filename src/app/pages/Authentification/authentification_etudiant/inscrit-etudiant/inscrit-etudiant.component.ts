@@ -39,16 +39,20 @@ export class InscritEtudiantComponent implements OnInit {
     var f = new FormData;
     f.append('etudiant', JSON.stringify(this.etudiant));
     f.append('pdp', this.fileToUpload);
-    this.etudiantService.register(f).subscribe(res => {
-      this._snackBar.open("Succes", "Close", {
-        duration: 1000
-      });
-      this.router.navigate(['/etudiant/home']);
-    }, err => {
-      this._snackBar.open(err.error, "Close", {
-        duration: 2000
-      });
-    })
+    this.etudiantService.register(f).subscribe(
+      {
+        next: res => {
+          this._snackBar.open("Succes", "Close", {
+            duration: 1000
+          });
+          this.router.navigate(['/etudiant/home']);
+        },
+        error: err => {
+          this._snackBar.open(err.error, "Close", {
+            duration: 2000
+          });
+        }
+      })
   }
 
 }

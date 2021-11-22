@@ -23,25 +23,30 @@ export class LoginRecruteurComponent implements OnInit {
   logIn() {
     console.log(this.recruteur);
 
-    this.recruteurService.logIn(this.recruteur).subscribe(res => {
-      this._snackBar.open("Succes", "Close", {
-        duration: 1000
-      });
-      
-      const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/recruteur/home';
-      this.router.navigate([returnUrl]);
-      
-    }, err => {
-      if(err=="Bad Request"){
-        this._snackBar.open("Invalid credentials", "Close", {
-          duration: 2000
-        });
+    this.recruteurService.logIn(this.recruteur).subscribe(
+      {
+        next: res => {
+          this._snackBar.open("Succes", "Close", {
+            duration: 1000
+          });
+          
+          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/recruteur/home';
+          this.router.navigate([returnUrl]);
+          
+        },
+        error: err => {
+          if(err=="Bad Request"){
+            this._snackBar.open("Invalid credentials", "Close", {
+              duration: 2000
+            });
+          }
+         else{
+          this._snackBar.open(err.error, "Close", {
+            duration: 2000
+          });
+         }
+        }
       }
-     else{
-      this._snackBar.open(err.error, "Close", {
-        duration: 2000
-      });
-     }
-    })
+       )
   }
 }

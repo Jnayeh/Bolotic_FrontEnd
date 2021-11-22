@@ -10,12 +10,12 @@ import { Etudiant } from 'src/app/models/etudiant';
   styleUrls: ['./login-etudiant.component.css']
 })
 export class LoginEtudiantComponent implements OnInit {
-  etudiant= new Etudiant;
+  etudiant = new Etudiant;
 
-  constructor( 
+  constructor(
     private etudiantService: EtudiantService,
-    private _snackBar:MatSnackBar,
-    private router:Router,
+    private _snackBar: MatSnackBar,
+    private router: Router,
     private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
@@ -24,24 +24,29 @@ export class LoginEtudiantComponent implements OnInit {
   logIn() {
     console.log(this.etudiant);
 
-    this.etudiantService.logIn(this.etudiant).subscribe(res => {
-      this._snackBar.open("Succes", "Close", {
-        duration: 1000
-      });
-      const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/etudiant/home';
-      this.router.navigate([returnUrl]);
-    }, err => {
-      if(err=="Bad Request"){
-        this._snackBar.open("Invalid credentials", "Close", {
-          duration: 2000
-        });
-      }
-     else{
-      this._snackBar.open(err.error, "Close", {
-        duration: 2000
-      });
-     }
-    })
+    this.etudiantService.logIn(this.etudiant).subscribe(
+      {
+        next: res => {
+          this._snackBar.open("Succes", "Close", {
+            duration: 1000
+          });
+          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/etudiant/home';
+          this.router.navigate([returnUrl]);
+        }, 
+        error: err => {
+          if (err == "Bad Request") {
+            this._snackBar.open("Invalid credentials", "Close", {
+              duration: 2000
+            });
+          }
+          else {
+            this._snackBar.open(err.error, "Close", {
+              duration: 2000
+            });
+
+          }
+        }
+      })
   }
 
 }
