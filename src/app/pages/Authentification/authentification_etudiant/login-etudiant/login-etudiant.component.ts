@@ -32,7 +32,7 @@ export class LoginEtudiantComponent implements OnInit {
           });
           const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/etudiant/home';
           this.router.navigate([returnUrl]);
-        }, 
+        },
         error: err => {
           if (err == "Bad Request") {
             this._snackBar.open("Invalid credentials", "Close", {

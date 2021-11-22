@@ -11,11 +11,11 @@ import { Recruteur } from 'src/app/models/recruteur';
 })
 export class LoginRecruteurComponent implements OnInit {
 
-  recruteur= new Recruteur;
-  constructor( 
-    private recruteurService: RecruteurService, 
-    private _snackBar:MatSnackBar,
-    private router:Router,
+  recruteur = new Recruteur;
+  constructor(
+    private recruteurService: RecruteurService,
+    private _snackBar: MatSnackBar,
+    private router: Router,
     private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
@@ -29,24 +29,24 @@ export class LoginRecruteurComponent implements OnInit {
           this._snackBar.open("Succes", "Close", {
             duration: 1000
           });
-          
+
           const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/recruteur/home';
           this.router.navigate([returnUrl]);
-          
+
         },
         error: err => {
-          if(err=="Bad Request"){
+          if (err == "Bad Request") {
             this._snackBar.open("Invalid credentials", "Close", {
               duration: 2000
             });
           }
-         else{
-          this._snackBar.open(err.error, "Close", {
-            duration: 2000
-          });
-         }
+          else {
+            this._snackBar.open(err.error, "Close", {
+              duration: 2000
+            });
+          }
         }
       }
-       )
+    )
   }
 }

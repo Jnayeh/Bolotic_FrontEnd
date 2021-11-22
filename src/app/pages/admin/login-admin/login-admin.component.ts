@@ -13,8 +13,8 @@ export class LoginAdminComponent implements OnInit {
 
   admin = new Administrateur;
   constructor(
-    private administrateurService: AdministrateurService, 
-    private _snackBar: MatSnackBar, 
+    private administrateurService: AdministrateurService,
+    private _snackBar: MatSnackBar,
     private router: Router,
     private route: ActivatedRoute,) { }
 
@@ -25,16 +25,19 @@ export class LoginAdminComponent implements OnInit {
   logIn() {
     console.log(this.admin);
 
-    this.administrateurService.logIn(this.admin).subscribe(res => {
-      this._snackBar.open("Succes", "Close", {
-        duration: 1000
-      });
-      const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/admin/dashboard';
-      this.router.navigate([returnUrl]);
-    }, err => {
-      this._snackBar.open(err.error, "Close", {
-        duration: 2000
-      });
+    this.administrateurService.logIn(this.admin).subscribe({
+      next: res => {
+        this._snackBar.open("Succes", "Close", {
+          duration: 1000
+        });
+        const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/admin/dashboard';
+        this.router.navigate([returnUrl]);
+      }, error:
+        err => {
+          this._snackBar.open(err.error, "Close", {
+            duration: 2000
+          });
+        }
     })
   }
 }

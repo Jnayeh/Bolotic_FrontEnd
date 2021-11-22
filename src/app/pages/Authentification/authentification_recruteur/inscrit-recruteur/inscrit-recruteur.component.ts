@@ -10,21 +10,21 @@ import { Recruteur } from 'src/app/models/recruteur';
   styleUrls: ['./inscrit-recruteur.component.css']
 })
 export class InscritRecruteurComponent implements OnInit {
-  
 
 
-  constructor(private recruteurService: RecruteurService, private _snackBar: MatSnackBar,private router: Router) { }
+
+  constructor(private recruteurService: RecruteurService, private _snackBar: MatSnackBar, private router: Router) { }
   ngOnInit(): void {
-    
+
   }
 
   recruteur = new Recruteur;
   fileToUpload: any;
   logoToUpload: any;
   pro = false;
-  photo:any;
-  logo:any;
-  
+  photo: any;
+  logo: any;
+
 
   handleFileInput(event: Event) {
 
@@ -76,6 +76,6 @@ export class InscritRecruteurComponent implements OnInit {
           });
         }
       }
-       )
+    )
   }
 }
