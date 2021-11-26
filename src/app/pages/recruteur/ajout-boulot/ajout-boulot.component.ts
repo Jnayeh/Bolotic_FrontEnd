@@ -27,7 +27,7 @@ export class AjoutBoulotComponent implements OnInit {
         duration: 1000
       });
       console.log("Boulot :",res)
-      this.router.navigate(['/recruteur/profil']);
+      this.router.navigate(['/recruteur/home']);
     }, err => {
       this._snackBar.open(err, "Close", {
         duration: 2000

@@ -7,6 +7,7 @@ export class Boulot extends User {
     recruteur:any;
     category:any;
     contrats:any[];
+    prix: Number;
     constructor(){
         super();
         this.titre= '';
@@ -15,6 +16,7 @@ export class Boulot extends User {
         this.recruteur= null;
         this.category= null;
         this.contrats= [];
+        this.prix= 0;
     }
     
 }
