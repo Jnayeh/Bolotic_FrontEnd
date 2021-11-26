@@ -1,17 +1,51 @@
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<h1 class="title">
+  Ajouter Boulot
+</h1>
 <form>
-  <div class="form-group">
-    <label for="LabelTitre">Titre</label>
-    <input type="text" class="form-control" id="Titre" #Titre [(ngModel)]="ajoutboulot.titre"  name="titre" required>
+  <div style="display: flex; justify-content:space-between;">
+    <div style="width: 49%;">
+      <label>
+        <p class="label-txt">Saisie le titre</p>
+        <input type="text" class="input" [(ngModel)]="ajoutboulot.titre" name="titre"
+        #nom="ngModel" required>
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+      </label>
+    </div>
+    <div style="width: 49%;">
+      <label>
+        <p class="label-txt">Saisie la description</p>
+        <input type="text" class="input" [(ngModel)]="ajoutboulot.description" name="description"
+        #prenom="ngModel" required>
+        <div class="line-box" >
+          <div class="line"></div>
+        </div>
+      </label>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="LabelDesc">Description du boulot</label>
-    <input type="text" class="form-control" id="Description" placeholder="Description du boulot" [(ngModel)]="ajoutboulot.description" name="description"  required >
-  </div>
+  <label>
+    <p class="label-txt">Saisie le prix</p>
+    <input type="text" class="input" [(ngModel)]="ajoutboulot.prix" name="prix"
+    #email="ngModel" required>
+    <div class="line-box" >
+      <div class="line" ></div>
+    </div>
+  </label>
 
-  <div class="form-group">
-    <label for="LabelDateFin">Date Fin du boulot</label>
-    <input type="date" class="form-control" id="DateFin" [(ngModel)]="ajoutboulot.datefin" name="datefin" required>
-  </div>
-
-  <button type="submit" (click)="AddBoulot()">Ajout boulot</button>
+  
+    <p class="label-txt">Saisie la date</p>
+    <input type="date" class="input" [(ngModel)]="ajoutboulot.datefin" name="universite"
+    #universite="ngModel" required>
+    <div class="line-box" >
+      <div class="line"></div>
+    </div>
+    <button type="submit" (click)="AddBoulot()">Ajout boulot</button>
 </form>
