@@ -20,9 +20,20 @@ export class DemandeBoulotComponent implements OnInit {
   boulot2 : any;
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-   
-    this.boulot2 = this.BoulotService.get(id);
+
+    this.BoulotService.get('id').subscribe(
+      {
+        next: res => {
+          this.boulot2= res
+        }, error:
+          err => {
+            console.log(err);
+            this._snackBar.open(err.error, "Close", {
+              duration: 2000
+            });
+          }
+      });  
+  
     this.boulot.titre=this.boulot2.titre;
     this.boulot.description=this.boulot2.description;
     this.boulot.prix=this.boulot2.prix;

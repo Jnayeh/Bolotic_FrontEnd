@@ -30,6 +30,7 @@ import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.compo
 import { LoginComponent } from './pages/Authentification/login/login.component';
 import { AjoutBoulotComponent } from './pages/recruteur/ajout-boulot/ajout-boulot.component';
 import { DemandeBoulotComponent } from './pages/etudiant/demande-boulot/demande-boulot.component';
+import { ConsulterRecruteurComponent } from './pages/etudiant/consulter-recruteur/consulter-recruteur.component';
 
 
 
@@ -49,7 +50,8 @@ import { DemandeBoulotComponent } from './pages/etudiant/demande-boulot/demande-
     LoginAdminComponent,
     LoginComponent,
     AjoutBoulotComponent,
-    DemandeBoulotComponent
+    DemandeBoulotComponent,
+    ConsulterRecruteurComponent
   ],
   imports: [
     BrowserModule,
