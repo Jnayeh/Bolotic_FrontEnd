@@ -78,6 +78,7 @@ body {
   
   button {
     display: inline-block;
+    margin: 20px;
     padding: 12px 24px;
     background: rgb(220, 220, 220);
     font-weight: bold;

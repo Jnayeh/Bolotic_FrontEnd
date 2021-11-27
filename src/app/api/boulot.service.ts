@@ -17,6 +17,11 @@ export class BoulotService {
     return this.httpClient.get<Boulot[]>(this.url + '/boulots');
   }
 
+  
+  public getAllbyId(id: any): Observable<any> {
+    return this.httpClient.get<Boulot[]>(this.url + '/boulots/recruteur/' + id);
+  }
+
   public get(id: any): Observable<any> {
     return this.httpClient.get<Boulot>(this.url + '/boulot/' + id);
   }
