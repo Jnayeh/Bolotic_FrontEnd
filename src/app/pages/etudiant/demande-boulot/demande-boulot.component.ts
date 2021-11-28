@@ -26,7 +26,7 @@ export class DemandeBoulotComponent implements OnInit {
     this.boulot.titre=this.boulot2.titre;
     this.boulot.description=this.boulot2.description;
     this.boulot.prix=this.boulot2.prix;
-    this.boulot.datefin=this.boulot2.datefin;
+    this.boulot.date_fin=this.boulot2.date_fin;
     this.boulot.recruteur=this.boulot2.recruteur;
   
     
