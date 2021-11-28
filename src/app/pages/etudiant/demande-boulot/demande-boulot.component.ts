@@ -16,6 +16,8 @@ export class DemandeBoulotComponent implements OnInit {
 
   constructor(private BoulotService:BoulotService, private _snackBar: MatSnackBar,private router: Router, private route: ActivatedRoute) { }
 
+  
+  
   boulot = new Boulot();
 
   ngOnInit(): void {
@@ -26,8 +28,7 @@ export class DemandeBoulotComponent implements OnInit {
     this.BoulotService.get(id).subscribe(
       {
         next: res => {
-          this.boulot= res;
-          console.log(this.boulot);
+          this.boulot= res 
         }, error:
           err => {
             console.log(err);
@@ -37,24 +38,5 @@ export class DemandeBoulotComponent implements OnInit {
           }
       });  
     
-    
   }
-  
-  DemandeBoulot(){
-
-    this.BoulotService.add(this.boulot).subscribe(res => {
-      this._snackBar.open("Succes", "Close", {
-        duration: 1000
-      });
-      console.log("Boulot :",res)
-      this.router.navigate(['/etudiant/profil']);
-    }, err => {
-      this._snackBar.open(err, "Close", {
-        duration: 2000
-      });
-    })
-  }
-
- 
-
 }
