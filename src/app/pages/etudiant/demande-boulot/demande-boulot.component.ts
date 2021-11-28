@@ -24,7 +24,7 @@ export class DemandeBoulotComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     console.log(id);
 
-    this.BoulotService.get('id').subscribe(
+    this.BoulotService.get(id).subscribe(
       {
         next: res => {
           this.boulot2= res
