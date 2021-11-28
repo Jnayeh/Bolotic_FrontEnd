@@ -1,24 +1,7 @@
-<form>
-    <div class="form-group">
-      <label for="LabelTitre">Titre</label>
-      <input type="text" class="form-control" id="Titre" #Titre [(ngModel)]="boulot.titre"  name="titre" required>
-    </div>
-    <div class="form-group">
-      <label for="LabelDesc">Description du boulot</label>
-      <input type="text" class="form-control" id="Description" placeholder="Description" [(ngModel)]="boulot.datefin" name="description"  required >
-    </div>
 
-    <div class="form-group">
-        <label for="LabelDesc">Description du boulot</label>
-        <input type="text" class="form-control" id="prix" placeholder="prix" [(ngModel)]="boulot.prix" name="prix"  required >
-      </div>
-  
-    <div class="form-group">
-      <label for="LabelDateFin">Date Fin du boulot</label>
-      <input type="date" class="form-control" id="DateFin" [(ngModel)]="boulot.datefin" name="datefin" required>
-    </div>
-  
-    <button type="submit" (click)="DemandeBoulot">Ajout boulot</button>
-  </form>
+
+          <span>{{boulot.titre}}</span>
+          <span>{{boulot.description}}</span>
+      
 
   
