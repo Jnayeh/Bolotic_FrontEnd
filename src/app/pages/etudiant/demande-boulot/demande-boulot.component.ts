@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { BoulotService } from 'src/app/api/boulot.service';
 import { Boulot } from 'src/app/models/boulot';
 
@@ -13,13 +14,15 @@ import { Boulot } from 'src/app/models/boulot';
 export class DemandeBoulotComponent implements OnInit {
 
 
-
   constructor(private BoulotService:BoulotService, private _snackBar: MatSnackBar,private router: Router, private route: ActivatedRoute) { }
 
   boulot = new Boulot();
-  boulot2 : any;
+  boulot2 = new Boulot();
 
   ngOnInit(): void {
+
+    const id = this.route.snapshot.paramMap.get('id');
+    console.log(id);
 
     this.BoulotService.get('id').subscribe(
       {
@@ -45,7 +48,7 @@ export class DemandeBoulotComponent implements OnInit {
   }
   
   DemandeBoulot(){
-       
+
     this.BoulotService.add(this.boulot).subscribe(res => {
       this._snackBar.open("Succes", "Close", {
         duration: 1000
