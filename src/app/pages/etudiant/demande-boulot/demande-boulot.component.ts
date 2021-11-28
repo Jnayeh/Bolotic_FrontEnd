@@ -17,7 +17,6 @@ export class DemandeBoulotComponent implements OnInit {
   constructor(private BoulotService:BoulotService, private _snackBar: MatSnackBar,private router: Router, private route: ActivatedRoute) { }
 
   boulot = new Boulot();
-  boulot2 = new Boulot();
 
   ngOnInit(): void {
 
@@ -27,7 +26,8 @@ export class DemandeBoulotComponent implements OnInit {
     this.BoulotService.get(id).subscribe(
       {
         next: res => {
-          this.boulot2= res
+          this.boulot= res;
+          console.log(this.boulot);
         }, error:
           err => {
             console.log(err);
@@ -36,13 +36,6 @@ export class DemandeBoulotComponent implements OnInit {
             });
           }
       });  
-  
-    this.boulot.titre=this.boulot2.titre;
-    this.boulot.description=this.boulot2.description;
-    this.boulot.prix=this.boulot2.prix;
-    this.boulot.date_fin=this.boulot2.date_fin;
-    this.boulot.recruteur=this.boulot2.recruteur;
-  
     
     
   }

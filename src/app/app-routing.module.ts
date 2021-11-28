@@ -33,7 +33,7 @@ const routes: Routes = [
       { path: 'avis', component: WelcomeComponent },
       { path: 'carte', component: WelcomeComponent },
       { path: 'demandeboulot/:id', component:DemandeBoulotComponent},
-      { path: 'consulterrecruteur', component:ConsulterRecruteurComponent}
+      { path: 'consulter/recruteurs', component:ConsulterRecruteurComponent}
 
     ],
   },
