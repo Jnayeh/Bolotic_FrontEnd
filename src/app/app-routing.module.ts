@@ -11,6 +11,7 @@ import { LoginEtudiantComponent } from './pages/Authentification/authentificatio
 import { InscritRecruteurComponent } from './pages/Authentification/authentification_recruteur/inscrit-recruteur/inscrit-recruteur.component';
 import { LoginRecruteurComponent } from './pages/Authentification/authentification_recruteur/login-recruteur/login-recruteur.component';
 import { LoginComponent } from './pages/Authentification/login/login.component';
+import { ConsulterRecruteurComponent } from './pages/etudiant/consulter-recruteur/consulter-recruteur.component';
 import { DemandeBoulotComponent } from './pages/etudiant/demande-boulot/demande-boulot.component';
 import { HomeEtudiantComponent } from './pages/etudiant/home-etudiant/home-etudiant.component';
 import { AjoutBoulotComponent } from './pages/recruteur/ajout-boulot/ajout-boulot.component';
@@ -25,13 +26,14 @@ const routes: Routes = [
   { path: 'LogIn', component: LoginComponent },
 
   {
-    path: 'etudiant', canActivate: [AuthEtudiantGuard],
+    path: 'etudiant',
     children: [
       { path: 'home', component: HomeEtudiantComponent },
       { path: 'profil', component: WelcomeComponent },
       { path: 'avis', component: WelcomeComponent },
       { path: 'carte', component: WelcomeComponent },
-      { path: 'demandeboulot/:id', component:DemandeBoulotComponent}
+      { path: 'demandeboulot/:id', component:DemandeBoulotComponent},
+      { path: 'consulterrecruteur', component:ConsulterRecruteurComponent}
 
     ],
   },
