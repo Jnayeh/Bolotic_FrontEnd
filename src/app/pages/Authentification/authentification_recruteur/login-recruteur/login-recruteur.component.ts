@@ -30,7 +30,7 @@ export class LoginRecruteurComponent implements OnInit {
             duration: 1000
           });
 
-          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/recruteur/bolos/ajout';
+          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/recruteur/home';
           this.router.navigate([returnUrl]);
 
         },

@@ -44,11 +44,11 @@ const routes: Routes = [
       { path: 'home', component: HomeRecruteurComponent },
       { path: 'profil', component: WelcomeComponent },
       {
-        path: 'bolos', component: AjoutBoulotComponent,
+        path: 'boulot',
         children: [
           { path: 'ajout', component: AjoutBoulotComponent},
           { path: ':id', component: WelcomeComponent },
-          { path: 'modifier/:id', component: WelcomeComponent }
+          { path: 'modifier/:id', component: AjoutBoulotComponent, }
         ],
       },
       { path: 'avis', component: WelcomeComponent },

@@ -14,6 +14,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 import {MatRippleModule} from '@angular/material/core';
 
 
@@ -61,7 +62,8 @@ import { ProfileEtudiantComponent } from './pages/etudiant/profile-etudiant/prof
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-
+    
+    MatIconModule,
     MatSnackBarModule,
     MatSlideToggleModule,
     MatTabsModule,
