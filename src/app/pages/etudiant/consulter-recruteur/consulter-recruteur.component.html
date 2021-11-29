@@ -1,14 +1,54 @@
 
 
-<ul>
-    <li *ngFor="let consult of recruteurs; let index=index">
-        <span>{{index}}</span>
-            <span>{{consult.prenom}}</span>
-            <span>{{consult.nom}}</span>
-            <span>{{consult.email}}</span>
-            <span>{{consult.num_tel}}</span>
-
-    </li>
 
 
-</ul>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<h1 class="title">
+  Les recruteurs
+</h1>
+<form>
+<div *ngFor="let consult of recruteurs; let index=index">
+  <div style="display: flex; justify-content:space-between;">
+    <div style="width: 49%;">
+      <label>
+        <p class="label-txt">Prenom</p>
+        <input type="text" class="input" value="{{consult.prenom}}" name="prenom"
+       required>
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+      </label>
+    </div>
+    <div style="width: 49%;">
+      <label>
+        <p class="label-txt">Nom</p>
+        <input type="text" class="input" value="{{consult.nom}}" name="nom"
+        required>
+        <div class="line-box" >
+          <div class="line"></div>
+        </div>
+      </label>
+    </div>
+  </div>
+  <label>
+    <p class="label-txt">Email</p>
+    <input type="text" class="input" value="{{consult.email}}" name="email"
+   required>
+    <div class="line-box" >
+      <div class="line" ></div>
+    </div>
+  </label>
+
+  
+    <p class="label-txt">Telephone</p>
+    <input type="text" class="input" value="{{consult.num_tel}}" name="universite"
+     required>
+    <div class="line-box" >
+      <div class="line"></div>
+    </div>
+</div>
+</form>
