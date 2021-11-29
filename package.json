@@ -20,14 +20,11 @@
     "@angular/platform-browser": "~13.0.0",
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
-<<<<<<< HEAD
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "bootstrap": "^5.1.3",
     "font-awesome": "^4.7.0",
-=======
     "@types/socket.io-client": "^3.0.0",
->>>>>>> 7f6367259ef813af2391b01032d44e7286cedfc0
     "rxjs": "~7.4.0",
     "socket.io-client": "^4.4.0",
     "tslib": "^2.3.0",
