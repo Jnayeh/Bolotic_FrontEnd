@@ -31,6 +31,7 @@ import { LoginComponent } from './pages/Authentification/login/login.component';
 import { AjoutBoulotComponent } from './pages/recruteur/ajout-boulot/ajout-boulot.component';
 import { DemandeBoulotComponent } from './pages/etudiant/demande-boulot/demande-boulot.component';
 import { ConsulterRecruteurComponent } from './pages/etudiant/consulter-recruteur/consulter-recruteur.component';
+import { ProfileEtudiantComponent } from './pages/etudiant/profile-etudiant/profile-etudiant.component';
 
 
 
@@ -51,7 +52,8 @@ import { ConsulterRecruteurComponent } from './pages/etudiant/consulter-recruteu
     LoginComponent,
     AjoutBoulotComponent,
     DemandeBoulotComponent,
-    ConsulterRecruteurComponent
+    ConsulterRecruteurComponent,
+    ProfileEtudiantComponent
   ],
   imports: [
     BrowserModule,
