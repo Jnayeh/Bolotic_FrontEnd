@@ -14,6 +14,7 @@ import { LoginComponent } from './pages/Authentification/login/login.component';
 import { ConsulterRecruteurComponent } from './pages/etudiant/consulter-recruteur/consulter-recruteur.component';
 import { DemandeBoulotComponent } from './pages/etudiant/demande-boulot/demande-boulot.component';
 import { HomeEtudiantComponent } from './pages/etudiant/home-etudiant/home-etudiant.component';
+import { ProfileEtudiantComponent } from './pages/etudiant/profile-etudiant/profile-etudiant.component';
 import { AjoutBoulotComponent } from './pages/recruteur/ajout-boulot/ajout-boulot.component';
 import { HomeRecruteurComponent } from './pages/recruteur/home-recruteur/home-recruteur.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -29,7 +30,7 @@ const routes: Routes = [
     path: 'etudiant',
     children: [
       { path: 'home', component: HomeEtudiantComponent },
-      { path: 'profil', component: WelcomeComponent },
+      { path: 'profil', component: ProfileEtudiantComponent },
       { path: 'avis', component: WelcomeComponent },
       { path: 'carte', component: WelcomeComponent },
       { path: 'demandeboulot/:id', component:DemandeBoulotComponent},
