@@ -1,22 +1,23 @@
 import { User } from "./user";
-export class Boulot extends User {
-
+export class Boulot  {
+    _id : any;
     titre: String;
     description: String;
-    datefin: Date;
+    date_debut: any;
+    date_fin: Date;
+    prix: Number;
     recruteur:any;
     category:any;
     contrats:any[];
-    prix: Number;
     constructor(){
-        super();
+        this._id=null;
         this.titre= '';
         this.description= '';
-        this.datefin= new Date();
+        this.date_fin= new Date();
+        this.prix= 0;
         this.recruteur= null;
         this.category= null;
         this.contrats= [];
-        this.prix= 0;
     }
     
 }

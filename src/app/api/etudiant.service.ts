@@ -53,6 +53,12 @@ export class EtudiantService {
   public update(etudiant: FormData, id: any): Observable<any> {
     return this.httpClient.put(this.url + '/etudiants/update/' + id, etudiant);
   }
+  
+  // enters Formdat object
+  // Return Recruiter object
+  public change_mdp(etudiant: Etudiant, id: any): Observable<any> {
+    return this.httpClient.put(this.url + '/etudiants/change_mdp/' + id, etudiant);
+  }
 
   // Return success message
   public delete(id: any): Observable<any> {

@@ -56,6 +56,12 @@ export class RecruteurService {
     return this.httpClient.put(this.url + '/recruteurs/update/' + id, recruteur);
   }
 
+  // enters Formdat object
+  // Return Recruiter object
+  public change_mdp(recruteur: Recruteur, id: any): Observable<any> {
+    return this.httpClient.put(this.url + '/recruteurs/change_mdp/' + id, recruteur);
+  }
+
   // Return success message
   public delete(id: any): Observable<any> {
     return this.httpClient.delete(this.url + '/recruteurs/delete/' + id);
