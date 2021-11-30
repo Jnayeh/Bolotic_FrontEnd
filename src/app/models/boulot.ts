@@ -2,7 +2,7 @@ import { User } from "./user";
 export class Boulot  {
     _id : any;
     titre: String;
-    description: String;
+    description: string;
     date_debut: any;
     date_fin: Date;
     prix: Number;

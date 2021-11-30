@@ -1,26 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import * as io from 'socket.io-client';
-import { environment } from 'src/environments/environment';
+import { BoulotService } from 'src/app/api/boulot.service';
+import { Boulot } from 'src/app/models/boulot';
 @Component({
   selector: 'app-home-etudiant',
   templateUrl: './home-etudiant.component.html',
   styleUrls: ['./home-etudiant.component.css']
 })
 export class HomeEtudiantComponent implements OnInit {
+  boulots: Boulot[]=[];
 
-  private socket: any;
-  public data: any[] = [];
-  constructor() {
-    // Connect Socket with server URL
-    this.socket = io.connect(environment.baseUrl);
+  constructor( private boulotService: BoulotService) {
   }
 
   ngOnInit(): void {
-    this.socket.on('notification', (data: any) => {
-
-      this.data.push(data);
-
-    });
+    this.getBoulots();
   }
-
+  getBoulots(){
+    this.boulotService.getAll().subscribe({
+      next: res=>{
+        this.boulots=res;
+      },
+      error:err=>{
+        console.log(err);
+      }
+    })
+  }
 }

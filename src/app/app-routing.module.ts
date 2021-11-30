@@ -13,10 +13,12 @@ import { LoginRecruteurComponent } from './pages/Authentification/authentificati
 import { LoginComponent } from './pages/Authentification/login/login.component';
 import { ConsulterRecruteurComponent } from './pages/etudiant/consulter-recruteur/consulter-recruteur.component';
 import { DemandeBoulotComponent } from './pages/etudiant/demande-boulot/demande-boulot.component';
+import { EtudiantComponent } from './pages/etudiant/etudiant.component';
 import { HomeEtudiantComponent } from './pages/etudiant/home-etudiant/home-etudiant.component';
 import { ProfileEtudiantComponent } from './pages/etudiant/profile-etudiant/profile-etudiant.component';
 import { AjoutBoulotComponent } from './pages/recruteur/ajout-boulot/ajout-boulot.component';
 import { HomeRecruteurComponent } from './pages/recruteur/home-recruteur/home-recruteur.component';
+import { RecruteurComponent } from './pages/recruteur/recruteur.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
@@ -27,27 +29,27 @@ const routes: Routes = [
   { path: 'LogIn', component: LoginComponent },
 
   {
-    path: 'etudiant',
+    path: 'etudiant', component: EtudiantComponent,canActivate: [AuthEtudiantGuard],
     children: [
       { path: 'home', component: HomeEtudiantComponent },
       { path: 'profil', component: ProfileEtudiantComponent },
       { path: 'avis', component: WelcomeComponent },
       { path: 'carte', component: WelcomeComponent },
-      { path: 'demandeboulot/:id', component:DemandeBoulotComponent},
+      { path: 'boulot/:id', component:DemandeBoulotComponent},
       { path: 'consulter/recruteurs', component:ConsulterRecruteurComponent}
 
     ],
   },
   {
-    path: 'recruteur',canActivate: [AuthRecruteurGuard],
+    path: 'recruteur', component: RecruteurComponent,canActivate: [AuthRecruteurGuard],
     children: [
       { path: 'home', component: HomeRecruteurComponent },
-      { path: 'profil', component: WelcomeComponent },
+      { path: 'profil', component: ProfileEtudiantComponent },
       {
         path: 'boulot',
         children: [
           { path: 'ajout', component: AjoutBoulotComponent},
-          { path: ':id', component: WelcomeComponent },
+          { path: ':id', component:DemandeBoulotComponent },
           { path: 'modifier/:id', component: AjoutBoulotComponent, }
         ],
       },

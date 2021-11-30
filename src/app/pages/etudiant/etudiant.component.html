@@ -1,0 +1,51 @@
+<mat-drawer-container class="example-container" [hasBackdrop]="true">
+    <mat-drawer #drawer>
+      <div class="navigation-container">
+        <div class=" navigation sidebar-menu">
+  
+  
+          <a [routerLink]="['/etudiant/home']" routerLinkActive="active">
+            Accueil
+          </a>
+          <a [routerLink]="['/etudiant/profil']" routerLinkActive="active">
+            Profil
+          </a>
+        </div>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content>
+      <nav class="navbar">
+        <div style="display: flex; justify-content: flex-start;">
+          <button mat-icon-button aria-label="menu" class="menu" (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+        <div class="user-wrapper">
+          <button mat-icon-button aria-label="menu" class="menu" (click)="logOut()">
+              <mat-icon>logout</mat-icon>
+            </button>
+          <div class="icon">
+            <mat-icon [matBadge]="notifications.length" matBadgeColor="warn">notifications</mat-icon>
+          </div>
+  
+            <div>
+              <h4>{{etudiant.nom}} {{etudiant.prenom}}</h4>
+              <!-- <small>{{employeur.telephone}}</small> -->
+            </div>
+            <div *ngIf="etudiant.photo==null, else pdp">
+              <img src="/assets/user.png" style="height: 40px; width: 40px;">
+            </div>
+            <ng-template #pdp>
+              <img src="http://localhost:3000/{{etudiant.photo}}" style="height: 40px; width: 40px;">
+            </ng-template>
+        </div>
+      </nav>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  
+  <!-- <div *ngFor="let d of data">
+      <b>{{d.title}}</b>
+      <p>{{d.notifications}}</p>
+  </div> -->
+  

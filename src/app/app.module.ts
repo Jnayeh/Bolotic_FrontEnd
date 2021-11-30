@@ -16,6 +16,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatRippleModule} from '@angular/material/core';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 import { AppComponent } from './app.component';
@@ -33,6 +35,8 @@ import { AjoutBoulotComponent } from './pages/recruteur/ajout-boulot/ajout-boulo
 import { DemandeBoulotComponent } from './pages/etudiant/demande-boulot/demande-boulot.component';
 import { ConsulterRecruteurComponent } from './pages/etudiant/consulter-recruteur/consulter-recruteur.component';
 import { ProfileEtudiantComponent } from './pages/etudiant/profile-etudiant/profile-etudiant.component';
+import { RecruteurComponent } from './pages/recruteur/recruteur.component';
+import { EtudiantComponent } from './pages/etudiant/etudiant.component';
 
 
 
@@ -54,7 +58,9 @@ import { ProfileEtudiantComponent } from './pages/etudiant/profile-etudiant/prof
     AjoutBoulotComponent,
     DemandeBoulotComponent,
     ConsulterRecruteurComponent,
-    ProfileEtudiantComponent
+    ProfileEtudiantComponent,
+    RecruteurComponent,
+    EtudiantComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +74,9 @@ import { ProfileEtudiantComponent } from './pages/etudiant/profile-etudiant/prof
     MatSlideToggleModule,
     MatTabsModule,
     MatButtonModule,
-    MatRippleModule
+    MatRippleModule,
+    MatSidenavModule,
+    MatBadgeModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

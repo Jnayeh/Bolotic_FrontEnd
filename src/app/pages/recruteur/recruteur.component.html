@@ -1,0 +1,67 @@
+<mat-drawer-container class="example-container" [hasBackdrop]="true">
+  <mat-drawer #drawer>
+    <div class="navigation-container">
+      <div class=" navigation sidebar-menu">
+
+
+        <a [routerLink]="['/recruteur/home']" routerLinkActive="active">
+          Accueil
+        </a>
+        <a [routerLink]="['/recruteur/profil']" routerLinkActive="active">
+          Profil
+        </a>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <nav class="navbar">
+      <div style="display: flex; justify-content: flex-start;">
+        <button mat-icon-button aria-label="menu" class="menu" (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div class="user-wrapper">
+        <button mat-icon-button aria-label="menu" class="menu" (click)="logOut()">
+            <mat-icon>logout</mat-icon>
+          </button>
+        <div class="icon">
+          <mat-icon [matBadge]="notifications.length" matBadgeColor="warn">notifications</mat-icon>
+        </div>
+
+        <div *ngIf="recruteur.societe=='', else pro">
+          <div>
+            <h4>{{recruteur.nom}} {{recruteur.prenom}}</h4>
+            <!-- <small>{{employeur.telephone}}</small> -->
+          </div>
+          <div *ngIf="recruteur.photo==null, else pdp">
+            <img src="/assets/user.png" style="height: 40px; width: 40px;">
+          </div>
+          <ng-template #pdp>
+            <img src="http://localhost:3000/{{recruteur.photo}}" style="height: 40px; width: 40px;">
+          </ng-template>
+        </div>
+
+
+        <ng-template #pro>
+
+          <div>
+            <h4>{{recruteur.societe}}</h4>
+            <!-- <small>{{employeur.telephone}}</small> -->
+          </div>
+          <div *ngIf="recruteur.logo_societe==null, else logo">
+            <img src="/assets/user.png" style="height: 40px; width: 40px;">
+          </div>
+          <ng-template #logo>
+            <img src="http://localhost:3000/{{recruteur.logo_societe}}" style="height: 40px; width: 40px;">
+          </ng-template>
+        </ng-template>
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<!-- <div *ngFor="let d of data">
+    <b>{{d.title}}</b>
+    <p>{{d.notifications}}</p>
+</div> -->
