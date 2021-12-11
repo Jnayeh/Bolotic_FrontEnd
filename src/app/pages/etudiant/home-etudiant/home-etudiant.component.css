@@ -1,408 +1,490 @@
-body{
-    padding-top: 40px;
+body {
+  padding-top: 40px;
 }
+
 .p-field-checkbox label {
-    margin-left: 3px;
-  }
-  
-  * {
-    white-space: pre-wrap
-  }
-  
-  
-  div{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  /*.overflow{
+  margin-left: 3px;
+}
+
+* {
+  white-space: pre-wrap
+}
+
+
+div {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*.overflow{
     display:inline-block;
     width:80%;
     white-space: nowrap;
     overflow:hidden !important;
     text-overflow: ellipsis;
   }*/
-  
-  .blur {
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.616);
-    backdrop-filter: blur(10px);
-  }
-  .input {
-    padding: 5px 15px;
-    margin: 5px;
-    border-radius: 25px;
-    background: rgba(255, 255, 255, 0.616);
-    backdrop-filter: blur(10px);
-  }
-  
-  .input-size{
-    width: 30vw;
-  }
-  
-  .main {
-    /*  background-image: url("../../../assets/Hiring-Manager-Reviewing-Resume-During-Job-Interview.jpg");  */
-   
-    background-size: cover;
-    padding: 0px 20px;
-    margin: 5px auto;
-    margin-left: 31vw;
-    /*margin-left: 30vw;*/
-    width: 64vw;
-    border-radius: 20px;
-    
-    }
-  
-  .flex-cont {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0.5vw auto;
-    
-    border-radius: 30px;
-    flex-flow: column;
-  }
-  
-  .bottom{
-    padding-bottom: 20px;
-  }
-  
-  .responsive-body{
-    text-align:justify;
-    display: flex;
-    justify-content:space-between;
-  }
-  
-  @media (max-width:1051px) {
-    .responsive-body{
+
+.blur {
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.616);
+  backdrop-filter: blur(10px);
+}
+
+.input {
+  padding: 5px 15px;
+  margin: 5px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.616);
+  backdrop-filter: blur(10px);
+}
+
+.input-size {
+  width: 30vw;
+}
+
+.main {
+  /*  background-image: url("../../../assets/Hiring-Manager-Reviewing-Resume-During-Job-Interview.jpg");  */
+
+  background-size: cover;
+  padding: 0px 20px;
+  margin: 5px auto;
+  margin-left: 31vw;
+  /*margin-left: 30vw;*/
+  width: 64vw;
+  border-radius: 20px;
+
+}
+
+.flex-cont {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5vw auto;
+
+  border-radius: 30px;
+  flex-flow: column;
+}
+
+.bottom {
+  padding-bottom: 20px;
+}
+
+.responsive-body {
+  text-align: justify;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width:1051px) {
+  .responsive-body {
     display: flex;
     position: static;
     flex-direction: column;
-    }
-  
-    .search {
-      position: static !important;
-      width: 96% !important;
-      margin: 20px calc(1vw + 2%) !important;
-      display: flex;
-      justify-content: space-around;
-    }
-  
-    :host ::ng-deep p-multiselect .p-multiselect-chip{
-      width: 40vw;
-    }
-  
-    :host ::ng-deep p-chips .p-chips-multiple-container{
-      width: 90vw;
-    }
-    .main {
-      
-      margin: auto ;
-      width: 94vw;}
   }
-  
+
   .search {
-    position: fixed;
+    position: static !important;
+    width: 96% !important;
+    margin: 20px calc(1vw + 2%) !important;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    background: rgba(32, 132, 247);
-    color: white;
-    font-weight: bold;
-    height:fit-content;
-    z-index: 2;
-    padding: 0.5vw;
-    margin: 40px 1vw 0px 1vw;
-    width: 29vw;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    justify-content: space-around;
   }
-  
-  .card-single {
-    background: rgba(255, 255, 255, 0.8);
-    color: rgb(0, 90, 192);
-    backdrop-filter: blur(30px);
-    height: fit-content;
-    padding: 20px 20px 10px 20px;
-    margin: 1vw;
-    border-radius: 30px;
-    animation: reveal ease-in 0.5s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  :host ::ng-deep p-multiselect .p-multiselect-chip {
+    width: 40vw;
   }
-  
-  @keyframes reveal {
-  
-    0% {
-        opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  .p-fluid label{
-    padding: 5px 10px;
-  }
-  
-  .paging-control {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    
-    border-radius: 30px;
-    flex-flow: column;
-    background: rgba(255, 255, 255, 0.801);
-    backdrop-filter: blur(10px);
-    height: fit-content;
-    width: fit-content;
-    border-radius: 40px;
-  }
-  
-  
-  
-  .paging-control /deep/ .ngx-pagination .current {
-    border-radius: 20px;
-  }
-  .paging-control /deep/ .ngx-pagination {
-    border-radius: 20px;
-    margin: 0px 4px;
-    padding: 0px;
-    height: fit-content;
-  }
-  
-  .paging-control /deep/ .ngx-pagination .ng-star-inserted, .ngx-pagination .pagination-next, .ngx-pagination li {
-    border-radius: 20px;
-    margin: 0px 2px;
-  }
-  
-  .paging-control /deep/ .ngx-pagination li {
-    border-radius: 20px;
-    margin: 0px 2px;
-  }
-  
-  
-  /* The Modal (background) */
-  .modal {
-    backdrop-filter: blur(20px);
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 20; /* Sit on top */
-    padding-top: 80px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%;  /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    animation: fadeInModal 0.3s;
-  }
-  @keyframes fadeInModal {
-    0% {opacity:0;}
-    100% {opacity:1;}
-  }
-  
-  /* Modal Content */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 0px auto;
-    padding: 10px;
-    border-radius: 20px;
+
+  :host ::ng-deep p-chips .p-chips-multiple-container {
     width: 90vw;
-    height: 100%;
-    animation: fadeIn 0.3s;
+  }
+
+  .main {
+    margin: auto;
+    width: 94vw;
+  }
+
+  .s-input {
+    width: 90vw;
   }
   
-  @media (max-width:800px) {
-    
-    .modal-content {
-      
-      width: 97vw;
-    }
+}
+
+.search {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background: rgba(32, 132, 247);
+  color: white;
+  font-weight: bold;
+  height: fit-content;
+  z-index: 2;
+  padding: 0.5vw;
+  margin: 40px 1vw 0px 1vw;
+  width: 29vw;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-single {
+  background: rgba(255, 255, 255, 0.8);
+  color: rgb(0, 90, 192);
+  backdrop-filter: blur(30px);
+  height: fit-content;
+  padding: 20px 20px 10px 20px;
+  margin: 1vw;
+  border-radius: 30px;
+  animation: reveal ease-in 0.5s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@keyframes reveal {
+
+  0% {
+    opacity: 0;
   }
-  
-  @media (max-width:600px) {
-    
-    .modal-content {
-      
-      width: 98vw;
-    }
+
+  100% {
+    opacity: 1;
   }
-  
-  @media (max-width:500px) {
-    
-    .modal-content {
-      
-      width: 99vw;
-    }
+}
+
+.p-fluid label {
+  padding: 5px 10px;
+}
+
+.paging-control {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+
+  border-radius: 30px;
+  flex-flow: column;
+  background: rgba(255, 255, 255, 0.801);
+  backdrop-filter: blur(10px);
+  height: fit-content;
+  width: fit-content;
+  border-radius: 40px;
+}
+
+
+
+.paging-control /deep/ .ngx-pagination .current {
+  border-radius: 20px;
+}
+
+.paging-control /deep/ .ngx-pagination {
+  border-radius: 20px;
+  margin: 0px 4px;
+  padding: 0px;
+  height: fit-content;
+}
+
+.paging-control /deep/ .ngx-pagination .ng-star-inserted,
+.ngx-pagination .pagination-next,
+.ngx-pagination li {
+  border-radius: 20px;
+  margin: 0px 2px;
+}
+
+.paging-control /deep/ .ngx-pagination li {
+  border-radius: 20px;
+  margin: 0px 2px;
+}
+
+
+/* The Modal (background) */
+.modal {
+  backdrop-filter: blur(20px);
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 20;
+  /* Sit on top */
+  padding-top: 80px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  animation: fadeInModal 0.3s;
+}
+
+@keyframes fadeInModal {
+  0% {
+    opacity: 0;
   }
-  
-  @keyframes fadeIn {
-    0% {opacity:0;
-      transform: scale(0, 0);}
-    100% {opacity:1;
-      transform: scale(1, 1);}
-    
+
+  100% {
+    opacity: 1;
   }
-  
-  .p-justify-right {
-    display: flex;
-    justify-content:flex-end;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 0px auto;
+  padding: 10px;
+  border-radius: 20px;
+  width: 90vw;
+  height: 100%;
+  animation: fadeIn 0.3s;
+}
+
+@media (max-width:800px) {
+
+  .modal-content {
+
+    width: 97vw;
   }
-  .p-justify-between {
-    display: flex;
-    justify-content:space-between;
+}
+
+@media (max-width:600px) {
+
+  .modal-content {
+
+    width: 98vw;
   }
-  
-  
-  .p-button-rounded{
-    padding: 0px 16px;
-    margin: 4px;
+}
+
+@media (max-width:500px) {
+
+  .modal-content {
+
+    width: 99vw;
   }
-  .p-button-rounded:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
   }
-  
-  .button-white {
-    margin: 10px;
-    background-color: rgba(255, 255, 255, 0.719);
-    backdrop-filter: blur(80px);
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
   }
-  
-  /* for entreprise image*/
-  .column{
-      
-    display: flex;
-    flex-direction: column;
-    }
-    .right {
-      display: flex;
-      justify-content: flex-end;
-    }
-  .right img{
-    
-    margin-left: 20px;
-    border-radius: 15px;
-    height: 60px;
-  }
-  .details p{
-    margin: 10px;
-  }
-  
-  .details{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: fit-content;
-  }
-  
-  /* NG PRIME STYLING*/
-  :host ::ng-deep .p-component{
-    border-radius: 20px;
-  }
-  .p-multiselect-chip, .p-multiselect , .p-multiselect-open {
-    border-radius: 25px;
-    min-width: 12vw;
-  }
-  
-  :host ::ng-deep .p-component{
-    border-radius: 25px;
-  }
-  
-  :host ::ng-deep p-multiselect .p-multiselect-chip, .p-multiselect , .p-multiselect-open , .ng-tns-c75-6{
-    border-radius: 25px;
-    max-width: 96%;
-    margin: 6px;
-    min-width: 12vw;
-  }
-  
-  :host ::ng-deep .p-multiselect-label .ng-star-inserted{
-    border-radius: 25px;
-  }
-  
-  :host ::ng-deep .p-chips-multiple-container{
-    margin: 6px;
-    border-radius: 25px;
-    min-width: 27vw;
-    width: 100%;
-  }
-  
-  :host ::ng-deep .p-chips-multiple-container .p-chips-token {
-    margin: 1px;
-    border-radius: 25px;
-  }
-  
-  .mots-cles :host ::ng-deep .p-chips-multiple-container{
-    margin: 6px;
-    border-radius: 25px;
-    width: 100vw;
-  }
-  
-  :host ::ng-deep p-multiselect .p-multiselect-chip, :host ::ng-deep p-multiselect .p-multiselect-item {
-    border-radius: 25px;
-  }
-  
-  :host ::ng-deep p-multiselect .p-multiselect-items-wrapper{
-    border-radius: 0px 0px 20px 20px;
-  }
-  
-  :host ::ng-deep p-multiselect .p-multiselect-header{
-    border-radius: 20px 20px 0px 0px;
-  }
-  
-  :host ::ng-deep .scroll{
+
+}
+
+.p-justify-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.p-justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.p-button-rounded {
+  padding: 0px 16px;
+  margin: 4px;
+}
+
+.p-button-rounded:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button-white {
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.719);
+  backdrop-filter: blur(80px);
+}
+
+/* for entreprise image*/
+.column {
+
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.right img {
+
+  margin-left: 20px;
+  border-radius: 15px;
+  height: 60px;
+}
+
+.details p {
+  margin: 10px;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: fit-content;
+}
+
+.input {
+  border: none;
+  min-width: 100%;
+  border-radius: 20px !important;
+  padding: 10pt;
+  padding-left: 25px;
+}
+
+.s-input {
+  margin: 0px 5px;
+  min-width: 26vw;
+  border-radius: 20px !important;
+}
+.s-input i {
+  position: absolute;
+  z-index: 1;
+  color: #3c91ff;
+  margin: 7px 8px;
+}
+.mat-button{
+  margin: 0px 5px;
+  border-radius: 20px !important;
+}
+
+.mat-form-field {
+  margin: 0px 5px;
+  border: 0px !important;
+}
+
+
+
+
+/* NG PRIME STYLING*/
+:host ::ng-deep .p-component {
+  border-radius: 20px;
+}
+
+.p-multiselect-chip,
+.p-multiselect,
+.p-multiselect-open {
+  border-radius: 25px;
+  min-width: 12vw;
+}
+
+:host ::ng-deep .p-component {
+  border-radius: 25px;
+}
+
+:host ::ng-deep p-multiselect .p-multiselect-chip,
+.p-multiselect,
+.p-multiselect-open,
+.ng-tns-c75-6 {
+  border-radius: 25px;
+  max-width: 96%;
+  margin: 6px;
+  min-width: 12vw;
+}
+
+:host ::ng-deep .p-multiselect-label .ng-star-inserted {
+  border-radius: 25px;
+}
+
+:host ::ng-deep .p-chips-multiple-container {
+  margin: 6px;
+  border-radius: 25px;
+  min-width: 27vw;
+  width: 100%;
+}
+
+:host ::ng-deep .p-chips-multiple-container .p-chips-token {
+  margin: 1px;
+  border-radius: 25px;
+}
+
+.mots-cles :host ::ng-deep .p-chips-multiple-container {
+  margin: 6px;
+  border-radius: 25px;
+  width: 100vw;
+}
+
+:host ::ng-deep p-multiselect .p-multiselect-chip,
+:host ::ng-deep p-multiselect .p-multiselect-item {
+  border-radius: 25px;
+}
+
+:host ::ng-deep p-multiselect .p-multiselect-items-wrapper {
+  border-radius: 0px 0px 20px 20px;
+}
+
+:host ::ng-deep p-multiselect .p-multiselect-header {
+  border-radius: 20px 20px 0px 0px;
+}
+
+:host ::ng-deep .scroll {
+  width: 100%;
+  height: calc(100vh - 68px)
+}
+
+@media (max-width:1051px) {
+  :host ::ng-deep .scroll {
     width: 100%;
     height: calc(100vh - 68px)
   }
-  
-  @media (max-width:1051px) {
-    :host ::ng-deep .scroll{
-      width: 100%;
-      height: calc(100vh - 68px)
-    }
+}
+
+/*  Loader  */
+:host ::ng-deep .custom-spinner .p-progress-spinner-circle {
+
+  animation: custom-progress-spinner-dash 1.5s ease-in-out infinite, custom-progress-spinner-color 6s ease-in-out infinite;
+}
+
+@keyframes custom-progress-spinner-color {
+
+  100%,
+  0% {
+    stroke: #3c91ff;
   }
-  
-  /*  Loader  */
-  :host ::ng-deep .custom-spinner .p-progress-spinner-circle {
-    
-    animation: custom-progress-spinner-dash 1.5s ease-in-out infinite, custom-progress-spinner-color 6s ease-in-out infinite;
+
+  40% {
+    stroke: #b9b9b9;
   }
-  
-  @keyframes custom-progress-spinner-color {
-    100%,
-    0% {
-        stroke: #3c91ff;
-    }
-    40% {
-        stroke: #b9b9b9;
-    }
-    66% {
-        stroke: #02bee4;
-    }
-    80%,
-    90% {
-        stroke: #3c91ff;
-    }
+
+  66% {
+    stroke: #02bee4;
   }
-  
-  @keyframes custom-progress-spinner-dash {
-    0% {
-        stroke-dasharray: 1, 200;
-        stroke-dashoffset: 0;
-    }
-    50% {
-        stroke-dasharray: 89, 200;
-        stroke-dashoffset: -35px;
-    }
-    100% {
-        stroke-dasharray: 89, 200;
-        stroke-dashoffset: -124px;
-    }
+
+  80%,
+  90% {
+    stroke: #3c91ff;
   }
-  
-  .spinner{
-    display:flex;
-    justify-content:space-around;
-    margin: 10px auto;
-    animation: reveal ease-in 0.2s;
+}
+
+@keyframes custom-progress-spinner-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
   }
+
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+.spinner {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px auto;
+  animation: reveal ease-in 0.2s;
+}

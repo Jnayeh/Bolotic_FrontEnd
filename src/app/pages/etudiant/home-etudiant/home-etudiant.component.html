@@ -1,68 +1,79 @@
 <body>
-    <div class="responsive-body ">
-  
-        <div class="search">
-            
-          </div>
-          <div class="main">
-            
-            <div class="flex-cont ">
-              <div class="card-single"
-                *ngFor="let offre of boulots">
-                <div>
-                  <div class="p-justify-between ">
-                    <h2 style="text-align: left;">{{offre.titre}}</h2>
-                    
-                    <div class="p-justify-right column">
-                      <div class="right">
-                          
-                        <div *ngIf="offre.recruteur.societe=='', else pro">
-                            <div *ngIf="offre.recruteur.photo==null, else pdp">
-                              <img src="/assets/user.png" style="height: 40px; width: 40px;">
-                            </div>
-                            <ng-template #pdp>
-                              <img src="http://localhost:3000/{{offre.recruteur.photo}}" style="height: 40px; width: 40px;">
-                            </ng-template>
-                          </div>
-                  
-                  
-                          <ng-template #pro>
-                            <div *ngIf="offre.recruteur.logo_societe==null, else logo">
-                              <img src="/assets/user.png" style="height: 40px; width: 40px;">
-                            </div>
-                            <ng-template #logo>
-                              <img src="http://localhost:3000/{{offre.recruteur.logo_societe}}" style="height: 40px; width: 40px;">
-                            </ng-template>
-                          </ng-template>
-                        
-                      </div>
-                      <div class="p-justify-right">
-                        <div *ngIf="offre.recruteur.societe=='', else ste">
-                            <h3 style="text-transform: uppercase;">{{offre.recruteur.nom }} {{offre.recruteur.prenom}}</h3>
-                          </div>
-                  
-                          <ng-template #ste>
-                            <h3 style="text-transform: uppercase;">{{offre.recruteur.societe }}</h3>
-                          </ng-template>
-                        
-                      </div>
+  <div class="responsive-body ">
+
+    <div class="search">
+      <div>
+        <div class="s-input">
+          <i><mat-icon>search</mat-icon></i>
+          <input  class="input" type="text" [(ngModel)]="boulot_nom" name="nom"  mat-icon="search"  (keyup)="chercher()" #nom="ngModel">
+        </div>
+        <mat-form-field >
+          <mat-label>Categories</mat-label>
+          <mat-select multiple>
+            <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="main">
+
+      <div class="flex-cont ">
+        <div class="card-single" *ngFor="let offre of boulots">
+          <div>
+            <div class="p-justify-between ">
+              <h2 style="text-align: left;">{{offre.titre}}</h2>
+
+              <div class="p-justify-right column">
+                <div class="right">
+
+                  <div *ngIf="offre.recruteur.societe=='', else pro">
+                    <div *ngIf="offre.recruteur.photo==null, else pdp">
+                      <img src="/assets/user.png" style="height: 40px; width: 40px;">
                     </div>
+                    <ng-template #pdp>
+                      <img src="http://localhost:3000/{{offre.recruteur.photo}}" style="height: 40px; width: 40px;">
+                    </ng-template>
                   </div>
-                  <div>
-                    <span class="overflow" [innerHTML]="(offre.description | slice:0:150)+'...'">
-                    </span>
-                  </div>
+
+
+                  <ng-template #pro>
+                    <div *ngIf="offre.recruteur.logo_societe==null, else logo">
+                      <img src="/assets/user.png" style="height: 40px; width: 40px;">
+                    </div>
+                    <ng-template #logo>
+                      <img src="http://localhost:3000/{{offre.recruteur.logo_societe}}"
+                        style="height: 40px; width: 40px;">
+                    </ng-template>
+                  </ng-template>
+
                 </div>
-                <div class="details">
-                  <p><strong>Prix: </strong>
-                      <span>{{offre.prix}}  </span>
-                  </p>
+                <div class="p-justify-right">
+                  <div *ngIf="offre.recruteur.societe=='', else ste">
+                    <h3 style="text-transform: uppercase;">{{offre.recruteur.nom }} {{offre.recruteur.prenom}}</h3>
+                  </div>
+
+                  <ng-template #ste>
+                    <h3 style="text-transform: uppercase;">{{offre.recruteur.societe }}</h3>
+                  </ng-template>
+
                 </div>
               </div>
             </div>
-            
+            <div>
+              <span class="overflow" [innerHTML]="(offre.description | slice:0:150)+'...'">
+              </span>
+            </div>
           </div>
-          
-        
+          <div class="details">
+            <p><strong>Prix: </strong>
+              <span>{{offre.prix}} </span>
+            </p>
+          </div>
+        </div>
       </div>
+
+    </div>
+
+
+  </div>
 </body>

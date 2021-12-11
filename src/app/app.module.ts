@@ -18,6 +18,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatRippleModule} from '@angular/material/core';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatSelectModule} from '@angular/material/select';
 
 
 import { AppComponent } from './app.component';
@@ -76,7 +77,8 @@ import { EtudiantComponent } from './pages/etudiant/etudiant.component';
     MatButtonModule,
     MatRippleModule,
     MatSidenavModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSelectModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

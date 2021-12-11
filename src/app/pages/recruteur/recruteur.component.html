@@ -25,7 +25,7 @@
             <mat-icon>logout</mat-icon>
           </button>
         <div class="icon">
-          <mat-icon [matBadge]="notifications.length" matBadgeColor="warn">notifications</mat-icon>
+          <mat-icon [matBadge]="counter" matBadgeColor="warn">notifications</mat-icon>
         </div>
 
         <div *ngIf="recruteur.societe=='', else pro">

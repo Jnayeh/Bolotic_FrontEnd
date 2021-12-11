@@ -28,7 +28,8 @@ export class DemandeBoulotComponent implements OnInit {
     this.BoulotService.get(id).subscribe(
       {
         next: res => {
-          this.boulot= res 
+          this.boulot= res ;
+          console.log(res);
         }, error:
           err => {
             console.log(err);
