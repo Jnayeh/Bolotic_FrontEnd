@@ -5,7 +5,7 @@ export class Contrat {
     etudiant:any;
     constructor(){
         this._id=null;
-        this.status= '';
+        this.status= "non selected";
         this.boulot= null;
         this.etudiant= null;
     }

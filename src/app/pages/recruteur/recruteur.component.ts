@@ -39,7 +39,7 @@ export class RecruteurComponent implements OnInit {
       if(notification.to==this.t.id){
         this.notifications.push(notification);
         this.counter++;
-        
+        this.sortNotifications();
       }
       
 
@@ -71,6 +71,7 @@ export class RecruteurComponent implements OnInit {
               }
             }
           });
+          this.sortNotifications();
         },
         error: err => {
           console.log(err)
@@ -82,5 +83,38 @@ export class RecruteurComponent implements OnInit {
     this.tokenService.logOut();
     
     this.router.navigate(['/LogIn']);
+  }
+  toggle() {
+    var modal = document.getElementById("notifications");
+    if(modal){
+      if (modal.style.display == "none") {
+        modal.style.display = "block";
+      }
+      else {
+        modal.style.display = "none";
+      }
+    }
+  }
+  sortNotifications() {
+    return this.notifications.sort((a, b) => new Date(b.date_creation).getTime() - new Date(a.date_creation).getTime());
+  }
+  read_notif( notification: Notification){
+    notification.read=true;
+    this.notifService.update(notification,notification._id).subscribe(
+      {
+        next: res =>{
+          this.counter=this.counter-1;
+          console.log("CHANGED NOTIF :",res);
+          this.notifications.forEach(n=>{
+            if (n._id == res._id){
+              n= res;
+            }
+          })
+        },
+        error: err =>{
+          console.log(err);
+        }
+      }
+    )
   }
 }

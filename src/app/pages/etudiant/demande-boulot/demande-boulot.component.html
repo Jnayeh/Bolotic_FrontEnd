@@ -4,14 +4,59 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!------ Include the above in your HEAD tag ---------->
 
-  <h1 class="title">
-    Boulot
-  </h1>
-  <form>
-    <div >
+
+  <div class="p-justify-between" *ngIf="boulot._id">
+    <div class="boulot_container">
+      <div class="p-justify-between">
         <h2 style="text-transform: capitalize;">{{boulot.titre}}</h2>
-        <p >{{boulot.description}}</p>
-        
+        <button mat-button (click)="demande()">
+          Postuler une demande
+        </button>
+      </div>
+      <p style="padding: 10px;border: #59cbff;border-radius: 20px;min-height: 100px;">{{boulot.description}}
+      </p>
+      <mat-chip-list>
+        <mat-chip><strong>Prix: </strong> {{boulot.prix}} DT</mat-chip>
+        <mat-chip><strong>Posté: </strong> {{boulot.date_debut | date: 'HH:mm  dd-MM-yyyy ' }} </mat-chip>
+        <mat-chip><strong>Date limite: </strong> {{boulot.date_fin | date: 'HH:mm dd-MM-yyyy '}} </mat-chip>
+      </mat-chip-list>
     </div>
-  </form>
+    <div class="recruteur_container">
+      <div class="user-wrapper">
+        <div *ngIf="boulot.recruteur.societe=='', else pro">
+          
+          <div *ngIf="boulot.recruteur.photo==null, else pdp">
+            <img src="/assets/user.png" style="height: 80px; width: 80px;">
+          </div>
+          <ng-template #pdp>
+            <img src="http://localhost:3000/{{boulot.recruteur.photo}}"  style="height: 80px; width: 80px;">
+          </ng-template>
+          <div>
+            <h2>{{boulot.recruteur.nom}} {{boulot.recruteur.prenom}}</h2>
+            <!-- <small>{{employeur.telephone}}</small> -->
+          </div>
+        </div>
+
+
+        <ng-template #pro>
+          
+          <div *ngIf="boulot.recruteur.logo_societe==null, else logo">
+            <img src="/assets/user.png"  style="height: 80px; width: 80px;">
+          </div>
+          <ng-template #logo>
+            <img src="http://localhost:3000/{{boulot.recruteur.logo_societe}}"  style="height: 80px; width: 80px;">
+          </ng-template>
+          <div>
+            <h2>{{boulot.recruteur.societe}}</h2>
+            <!-- <small>{{employeur.telephone}}</small> -->
+          </div>
+        </ng-template>
+      </div>
+      
+      <mat-chip-list>
+        <mat-chip><strong>Email: </strong> {{boulot.recruteur.email}}</mat-chip>
+        <mat-chip><strong>Telephone: </strong> {{boulot.recruteur.num_tel}} </mat-chip>
+      </mat-chip-list>
+    </div>
+  </div>
 </body>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap User Management Data Table</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+
+  </script>
+</head>
+<body>
+ <div class="demandes_container">
+     <h2 class="demande_titre">demandes</h2>
+     <div class="demande justify-between" *ngFor="let contrat of contrats">
+        <div class="demande_detail">
+            {{contrat.etudiant.nom}} {{contrat.etudiant.prenom}}
+        </div>
+        <div class="demande_choice" *ngIf="contrat.status =='non selected', else accepted">
+            <button mat-icon-button  class="info" aria-label="etudiant">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+            <button mat-icon-button  class="accept" aria-label="accept" (click)="accept(contrat,contrat._id)">
+                <mat-icon>check_circle_outline</mat-icon>
+            </button>
+            <button mat-icon-button class="reject" aria-label="reject" (click)="reject(contrat,contrat._id)">
+                <mat-icon>cancel</mat-icon>
+            </button>
+        </div>
+        <ng-template #accepted>
+            <div class="demande_choice" >
+                <button mat-icon-button  class="info" aria-label="etudiant">
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+                
+            </div>
+        </ng-template>
+    </div>
+ </div>
+</body>

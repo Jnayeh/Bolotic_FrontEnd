@@ -47,12 +47,12 @@
                     <td><img src="http://localhost:3000/{{boulot.recruteur.logo_societe}}" class="avatar" alt="Avatar"
                         style="height: 50px;width: 50px; object-fit:cover; object-position:center;"></td>
                     <td>{{boulot.titre}}</td>
-                    <td>{{boulot.description}}</td>
+                    <td [innerHTML]="(boulot.description | slice:0:60)+'...'"></td>
                     <td><span class="status text-success">&bull;</span> {{boulot.prix}}</td>
                     <td>{{boulot.date_debut | date}}</td>
 
                     <td>
-                      <button routerLink='/recruteur/contrats/{{boulot._id}}' mat-icon-button  aria-label="demandes">
+                      <button routerLink='/recruteur/demandes/{{boulot._id}}' mat-icon-button  aria-label="demandes">
                         <mat-icon>filter_list</mat-icon>
                       </button>
                       <button routerLink='/recruteur/boulot/modifier/{{boulot._id}}' mat-icon-button class="modify"

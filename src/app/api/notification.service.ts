@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Notification } from '../models/notification';
 
 @Injectable({
   providedIn: 'root'
@@ -31,8 +32,13 @@ export class NotificationService {
 
   // enters JSON FORM Notification
   // Return JSON FORM Notification
+  public send(notification: Notification ): Observable<any> {
+    return this.httpClient.post(this.url + '/send_notification', notification);
+  }
+  // enters JSON FORM Notification
+  // Return JSON FORM Notification
   public update(notification: Notification, id: any): Observable<any> {
-    return this.httpClient.put(this.url + '/notifications/update' + id, notification);
+    return this.httpClient.put(this.url + '/notifications/update/' + id, notification);
   }
 
 

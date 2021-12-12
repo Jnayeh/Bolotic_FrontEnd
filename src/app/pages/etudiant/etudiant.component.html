@@ -1,51 +1,80 @@
 <mat-drawer-container class="example-container" [hasBackdrop]="true">
-    <mat-drawer #drawer>
-      <div class="navigation-container">
-        <div class=" navigation sidebar-menu">
-  
-  
-          <a [routerLink]="['/etudiant/home']" routerLinkActive="active">
-            Accueil
-          </a>
-          <a [routerLink]="['/etudiant/profil']" routerLinkActive="active">
-            Profil
-          </a>
-        </div>
+  <mat-drawer #drawer>
+    <div class="navigation-container">
+      <div class=" navigation sidebar-menu">
+
+
+        <a [routerLink]="['/etudiant/home']" routerLinkActive="active">
+          Accueil
+        </a>
+        <a [routerLink]="['/etudiant/profil']" routerLinkActive="active">
+          Profil
+        </a>
       </div>
-    </mat-drawer>
-    <mat-drawer-content>
-      <nav class="navbar">
-        <div style="display: flex; justify-content: flex-start;">
-          <button mat-icon-button aria-label="menu" class="menu" (click)="drawer.toggle()">
-            <mat-icon>menu</mat-icon>
-          </button>
-        </div>
-        <div class="user-wrapper">
-          <button mat-icon-button aria-label="menu" class="menu" (click)="logOut()">
-              <mat-icon>logout</mat-icon>
-            </button>
-          <div class="icon">
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <nav class="navbar">
+      <div style="display: flex; justify-content: flex-start;">
+        <button mat-icon-button aria-label="menu" class="menu" (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div class="user-wrapper">
+        <button mat-icon-button aria-label="menu" class="menu" (click)="logOut()">
+          <mat-icon>logout</mat-icon>
+        </button>
+        <div class="icon">
+          <button mat-icon-button aria-label="notif" (click)="toggle()"
+            *ngIf="counter>0, else none">
             <mat-icon [matBadge]="counter" matBadgeColor="warn">notifications</mat-icon>
-          </div>
-  
-            <div>
-              <h4>{{etudiant.nom}} {{etudiant.prenom}}</h4>
-              <!-- <small>{{employeur.telephone}}</small> -->
-            </div>
-            <div *ngIf="etudiant.photo==null, else pdp">
-              <img src="/assets/user.png" style="height: 40px; width: 40px;">
-            </div>
-            <ng-template #pdp>
-              <img src="http://localhost:3000/{{etudiant.photo}}" style="height: 40px; width: 40px;">
-            </ng-template>
+          </button>
+          <ng-template #none>
+            <button mat-icon-button aria-label="notif" (click)="toggle()">
+              <mat-icon >notifications</mat-icon>
+            </button>
+          </ng-template>
         </div>
-      </nav>
-      <router-outlet></router-outlet>
-    </mat-drawer-content>
-  </mat-drawer-container>
-  
-  <!-- <div *ngFor="let d of data">
-      <b>{{d.title}}</b>
-      <p>{{d.notifications}}</p>
-  </div> -->
-  
+
+        <div>
+          <h4>{{etudiant.nom}} {{etudiant.prenom}}</h4>
+          <!-- <small>{{employeur.telephone}}</small> -->
+        </div>
+        <div *ngIf="etudiant.photo==null, else pdp">
+          <img src="/assets/user.png" style="height: 40px; width: 40px;">
+        </div>
+        <ng-template #pdp>
+          <img src="http://localhost:3000/{{etudiant.photo}}" style="height: 40px; width: 40px;">
+        </ng-template>
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<div id="notifications" class="modal-content">
+  <div style="width: 400px;">
+    <h3>Notifications</h3>
+    <div *ngFor=" let notification of notifications" style="padding: 10px;display: flex;justify-content: space-between;"
+      [style.background-color]="notification.read == 1 ? '#d6d6d6' : '#ffffff'">
+      <div style="width:290px">
+        <h4>
+          <strong style="text-transform: capitalize;"
+            [style.color]="notification.read == 1 ? '#61748d' : '#000000'">{{notification.titre}}</strong>
+          <h5 [style.color]="notification.read == 1 ? '#61748d' : '#8d9da8'">{{notification.notification}}</h5>
+        </h4>
+      </div>
+      <div style="width:90px;display: flex;justify-content: flex-end;">
+        <button mat-icon-button aria-label="notif" disabled style="color: #8d9da8;"
+          *ngIf="notification.read, else unread">
+          <mat-icon>check_circle</mat-icon>
+        </button>
+        <ng-template #unread>
+          <button mat-icon-button aria-label="notif" style="color: #00a2ff;" (click)="read_notif(notification)">
+            <mat-icon>check_circle_outline</mat-icon>
+          </button>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
