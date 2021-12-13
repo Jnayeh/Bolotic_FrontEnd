@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthAdminGuard } from './helpers/auth-admin.guard';
 import { AuthEtudiantGuard } from './helpers/auth-etudiant.guard';
 import { AuthRecruteurGuard } from './helpers/auth-recruteur.guard';
+import { ConsultetudiantComponent } from './pages/admin/consultetudiant/consultetudiant.component';
+import { ConsultrecruteurComponent } from './pages/admin/consultrecruteur/consultrecruteur.component';
 
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
@@ -59,7 +61,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'admin', canActivate: [AuthAdminGuard],
+    path: 'admin',
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'profil', component: WelcomeComponent },
@@ -67,6 +69,8 @@ const routes: Routes = [
       { path: 'avis', component: WelcomeComponent },
       { path: 'contrats', component: WelcomeComponent },
       { path: 'reports', component: WelcomeComponent },
+      { path: 'consultetudiant', component:ConsultetudiantComponent},
+      { path: 'consultrecruteur', component:ConsultrecruteurComponent},
 
     ],
   },

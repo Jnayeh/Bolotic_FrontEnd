@@ -38,6 +38,8 @@ import { ConsulterRecruteurComponent } from './pages/etudiant/consulter-recruteu
 import { ProfileEtudiantComponent } from './pages/etudiant/profile-etudiant/profile-etudiant.component';
 import { RecruteurComponent } from './pages/recruteur/recruteur.component';
 import { EtudiantComponent } from './pages/etudiant/etudiant.component';
+import { ConsultetudiantComponent } from './pages/admin/consultetudiant/consultetudiant.component';
+import { ConsultrecruteurComponent } from './pages/admin/consultrecruteur/consultrecruteur.component';
 
 
 
@@ -61,7 +63,9 @@ import { EtudiantComponent } from './pages/etudiant/etudiant.component';
     ConsulterRecruteurComponent,
     ProfileEtudiantComponent,
     RecruteurComponent,
-    EtudiantComponent
+    EtudiantComponent,
+    ConsultetudiantComponent,
+    ConsultrecruteurComponent
   ],
   imports: [
     BrowserModule,
