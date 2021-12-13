@@ -9,11 +9,19 @@ body {
 
 .demandes_container {
   width: 38vw;
-  min-height: 100px;
+  height: max-content;
   margin: 2vw;
-  margin-top: 50px;
   background: #e9e9e9;
   border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.185);
+}
+.contrats_container {
+  width: 54vw;
+  min-height: 400px;
+  margin: 2vw;
+  background: #e9ecec;
+  border-radius: 20px;
   -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.185);
 }
@@ -63,4 +71,30 @@ body {
 .justify-between {
   display: flex;
   justify-content: space-between;
+}
+
+.boulot_container{
+  margin: 1vw;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #ffffffe3;
+}
+.mat-chip {
+  background-color: rgb(221, 220, 220);
+  color: rgb(0, 140, 255);
+}
+
+.mat-button {
+  margin: 0px 5px;
+  border-radius: 40px !important;
+  color: #0066ff;
+}
+
+.mat-button:hover {
+  background-color: rgba(0, 89, 255, 0.034);
+  color: #0066ff;
+}
+
+strong {
+  margin-right: 5px;
 }

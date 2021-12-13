@@ -20,7 +20,8 @@
 
   </script>
 </head>
-<body>
+<body class="justify-between">
+
  <div class="demandes_container">
      <h2 class="demande_titre">demandes</h2>
      <div class="demande justify-between" *ngFor="let contrat of contrats">
@@ -47,5 +48,19 @@
             </div>
         </ng-template>
     </div>
+ </div>
+ <div class="contrats_container">
+    <div class="boulot_container">
+        <div class="justify-between">
+          <h2 style="text-transform: capitalize;">{{boulot.titre}}</h2>
+          
+        </div>
+        <p style="padding: 10px;border: #59cbff;border-radius: 20px;">{{boulot.description}}
+        </p>
+        <mat-chip-list>
+          <mat-chip><strong>Prix: </strong> {{boulot.prix}} DT</mat-chip>
+          <mat-chip><strong>Posté: </strong> {{boulot.date_debut | date: 'HH:mm  dd-MM-yyyy ' }} </mat-chip>
+        </mat-chip-list>
+      </div>
  </div>
 </body>

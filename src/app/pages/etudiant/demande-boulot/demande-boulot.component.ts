@@ -76,6 +76,7 @@ export class DemandeBoulotComponent implements OnInit {
           {
             next: added_notif => {
               console.log(added_notif);
+              // Send notification created
               this.notificationService.send(added_notif).subscribe(
                 {
                   next: sent_notif => {
