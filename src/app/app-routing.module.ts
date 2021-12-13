@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthAdminGuard } from './helpers/auth-admin.guard';
 import { AuthEtudiantGuard } from './helpers/auth-etudiant.guard';
 import { AuthRecruteurGuard } from './helpers/auth-recruteur.guard';
+import { ConsultcontratComponent } from './pages/admin/consultcontrat/consultcontrat.component';
 import { ConsultetudiantComponent } from './pages/admin/consultetudiant/consultetudiant.component';
 import { ConsultrecruteurComponent } from './pages/admin/consultrecruteur/consultrecruteur.component';
 
@@ -73,6 +74,7 @@ const routes: Routes = [
       { path: 'reports', component: WelcomeComponent },
       { path: 'consultetudiant', component:ConsultetudiantComponent},
       { path: 'consultrecruteur', component:ConsultrecruteurComponent},
+      { path: 'consultcontrat', component:ConsultcontratComponent},
 
     ],
   },
