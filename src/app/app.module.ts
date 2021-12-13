@@ -19,6 +19,7 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSelectModule} from '@angular/material/select';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 import { AppComponent } from './app.component';
@@ -40,6 +41,7 @@ import { RecruteurComponent } from './pages/recruteur/recruteur.component';
 import { EtudiantComponent } from './pages/etudiant/etudiant.component';
 import { ConsultetudiantComponent } from './pages/admin/consultetudiant/consultetudiant.component';
 import { ConsultrecruteurComponent } from './pages/admin/consultrecruteur/consultrecruteur.component';
+import { DemandesComponent } from './pages/recruteur/demandes/demandes.component';
 
 
 
@@ -64,8 +66,10 @@ import { ConsultrecruteurComponent } from './pages/admin/consultrecruteur/consul
     ProfileEtudiantComponent,
     RecruteurComponent,
     EtudiantComponent,
+
     ConsultetudiantComponent,
-    ConsultrecruteurComponent
+    ConsultrecruteurComponent,
+    DemandesComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,6 +87,7 @@ import { ConsultrecruteurComponent } from './pages/admin/consultrecruteur/consul
     MatSidenavModule,
     MatBadgeModule,
     MatSelectModule,
+    MatChipsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

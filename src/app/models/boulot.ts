@@ -13,6 +13,7 @@ export class Boulot  {
         this._id=null;
         this.titre= '';
         this.description= '';
+        this.date_debut= Date.now();
         this.date_fin= new Date();
         this.prix= 0;
         this.recruteur= null;

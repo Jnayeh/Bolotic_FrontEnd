@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenService } from '../api/token.service';
 
 @Component({
   selector: 'app-welcome',
@@ -8,9 +9,21 @@ import { Router } from '@angular/router';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private tokenService: TokenService) { }
 
   ngOnInit(): void {
+    var t = this.tokenService.decodedToken()
+    if(t){
+      if(t.role=="administrateur"){
+      this.router.navigate(['/admin/dashboard'])
+      }
+      else if(t.role=="recruteur"){
+        this.router.navigate(['/recruteur/home'])
+        }
+        else if(t.role=="etudiant"){
+          this.router.navigate(['/etudiant/home'])
+          }
+    }
   }
 
   showSignUpDialog(){

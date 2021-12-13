@@ -1,52 +1,54 @@
 <body>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
 
-<h1 class="title">
-  Ajouter Boulot
-</h1>
-<form>
-  <div style="display: flex; justify-content:space-between;">
-    <div style="width: 49%;">
-      <label>
-        <p class="label-txt">Saisie le titre</p>
-        <input type="text" class="input" [(ngModel)]="ajoutboulot.titre" name="titre"
-        #nom="ngModel" required>
-        <div class="line-box">
-          <div class="line"></div>
-        </div>
-      </label>
+  <h1 class="title">
+    Ajouter Boulot
+  </h1>
+  <form>
+    <div style="display: flex; justify-content:space-between;">
+      <div style="width: 49%;">
+        <label>
+          <p class="label-txt">Saisie le titre</p>
+          <input type="text" class="input" [(ngModel)]="ajoutboulot.titre" name="titre" #nom="ngModel" required>
+          <div class="line-box">
+            <div class="line"></div>
+          </div>
+        </label>
+      </div>
+      <div style="width: 49%;">
+        <label>
+          <p class="label-txt">Saisie le prix</p>
+          <input type="text" class="input" [(ngModel)]="ajoutboulot.prix" name="prix" #email="ngModel" required>
+          <div class="line-box">
+            <div class="line"></div>
+          </div>
+        </label>
+      </div>
     </div>
-    <div style="width: 49%;">
-      <label>
-        <p class="label-txt">Saisie la description</p>
-        <input type="text" class="input" [(ngModel)]="ajoutboulot.description" name="description"
-        #prenom="ngModel" required>
-        <div class="line-box" >
-          <div class="line"></div>
-        </div>
-      </label>
-    </div>
-  </div>
-  <label>
-    <p class="label-txt">Saisie le prix</p>
-    <input type="text" class="input" [(ngModel)]="ajoutboulot.prix" name="prix"
-    #email="ngModel" required>
-    <div class="line-box" >
-      <div class="line" ></div>
-    </div>
-  </label>
 
-  
+    <label>
+      <p class="label-txt">Saisie la description</p>
+      <textarea class="input" [(ngModel)]="ajoutboulot.description" name="description" #prenom="ngModel" rows="4"
+        required></textarea>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+
     <p class="label-txt">Saisie la date</p>
-    <input type="date" class="input" [(ngModel)]="ajoutboulot.date_fin" name="universite"
-    #universite="ngModel" required>
-    <div class="line-box" >
+    <input type="datetime-local" class="input" min="{{ajoutboulot.date_debut | date: 'yyyy-MM-dd'}}"
+      [(ngModel)]="ajoutboulot.date_fin"  name="universite"
+      #universite="ngModel" required>
+    <div class="line-box">
       <div class="line"></div>
     </div>
-    <button type="submit" (click)="AddBoulot()">Ajout boulot</button>
-</form>
+    
+    <button type="submit" *ngIf="id ,else add" (click)="modifyBoulot()">Modifier boulot</button>
+    <ng-template #add>
+      <button type="submit" (click)="AddBoulot()">Ajout boulot</button>
+    </ng-template>
+  </form>
 </body>
-

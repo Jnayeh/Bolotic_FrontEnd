@@ -40,6 +40,18 @@ export class ContratService {
     return this.httpClient.put(this.url + '/contrats/update/' + id, contrat);
   }
 
+  // enters JSON FORM contrat
+  // Return JSON FORM contrat
+  public accept(contrat: Contrat, id: any): Observable<any> {
+    return this.httpClient.put(this.url + '/contrats/accept/' + id, contrat);
+  }
+
+  // enters JSON FORM contrat
+  // Return JSON FORM contrat
+  public reject(contrat: Contrat, id: any): Observable<any> {
+    return this.httpClient.put(this.url + '/contrats/reject/' + id, contrat);
+  }
+
   // Return success message
   public delete(id: any): Observable<any> {
     return this.httpClient.delete(this.url + '/contrats/delete/' + id);

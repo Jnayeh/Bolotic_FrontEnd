@@ -3,6 +3,7 @@ export class Notification {
     titre: String;
     notification: String;
     read: Boolean = false;
+    date_creation = new Date();
     to: any;
     //Sender recruteur id/object
     recruteur: any;
