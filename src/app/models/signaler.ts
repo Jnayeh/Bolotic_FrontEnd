@@ -6,6 +6,7 @@ export class Signaler {
     id_signaled:String;
     id_Signaling: String;
     
+    
     constructor() {
        this.description="";
        this.recruteur=null;
