@@ -20,47 +20,51 @@
 
   </script>
 </head>
+
 <body class="justify-between">
 
- <div class="demandes_container">
-     <h2 class="demande_titre">demandes</h2>
-     <div class="demande justify-between" *ngFor="let contrat of contrats">
-        <div class="demande_detail">
-            {{contrat.etudiant.nom}} {{contrat.etudiant.prenom}}
-        </div>
-        <div class="demande_choice" *ngIf="contrat.status =='non selected', else accepted">
-            <button mat-icon-button  class="info" aria-label="etudiant">
-                <mat-icon>account_circle</mat-icon>
-            </button>
-            <button mat-icon-button  class="accept" aria-label="accept" (click)="accept(contrat,contrat._id)">
-                <mat-icon>check_circle_outline</mat-icon>
-            </button>
-            <button mat-icon-button class="reject" aria-label="reject" (click)="reject(contrat,contrat._id)">
-                <mat-icon>cancel</mat-icon>
-            </button>
-        </div>
-        <ng-template #accepted>
-            <div class="demande_choice" >
-                <button mat-icon-button  class="info" aria-label="etudiant">
-                    <mat-icon>account_circle</mat-icon>
-                </button>
-                
-            </div>
-        </ng-template>
-    </div>
- </div>
- <div class="contrats_container">
-    <div class="boulot_container">
-        <div class="justify-between">
-          <h2 style="text-transform: capitalize;">{{boulot.titre}}</h2>
-          
-        </div>
-        <p style="padding: 10px;border: #59cbff;border-radius: 20px;">{{boulot.description}}
-        </p>
-        <mat-chip-list>
-          <mat-chip><strong>Prix: </strong> {{boulot.prix}} DT</mat-chip>
-          <mat-chip><strong>Posté: </strong> {{boulot.date_debut | date: 'HH:mm  dd-MM-yyyy ' }} </mat-chip>
-        </mat-chip-list>
+  <div class="demandes_container">
+    <h2 class="demande_titre">demandes</h2>
+    <div class="demande justify-between" *ngFor="let contrat of contrats">
+      <div class="demande_detail">
+        {{contrat.etudiant.nom}} {{contrat.etudiant.prenom}}
       </div>
- </div>
+      <div class="demande_choice" *ngIf="contrat.status =='non selected', else accepted">
+        <button mat-icon-button class="info" aria-label="etudiant">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <button mat-icon-button class="accept" aria-label="accept" (click)="accept(contrat,contrat._id)">
+          <mat-icon>check_circle_outline</mat-icon>
+        </button>
+        <button mat-icon-button class="reject" aria-label="reject" (click)="reject(contrat,contrat._id)">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </div>
+      <ng-template #accepted>
+        <div class="demande_choice">
+          <button mat-icon-button class="info" aria-label="etudiant">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div class="contrats_container">
+    <div class="boulot_container">
+      <div class="justify-between">
+        <h2 style="text-transform: capitalize;">{{boulot.titre}}</h2>
+
+      </div>
+      <p style="padding: 10px;border: #59cbff;border-radius: 20px;">{{boulot.description}}
+      </p>
+      <mat-chip-list>
+        <mat-chip><strong>Prix: </strong> {{boulot.prix}} DT</mat-chip>
+        <mat-chip><strong>Posté: </strong> {{boulot.date_debut | date: 'HH:mm  dd-MM-yyyy ' }} </mat-chip>
+      </mat-chip-list>
+    </div>
+    <div class="boulot_container">
+        <textarea style="border-radius: 20px;"></textarea>
+    </div>
+  </div>
 </body>
