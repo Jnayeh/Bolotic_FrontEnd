@@ -4,9 +4,16 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!------ Include the above in your HEAD tag ---------->
 
-  <h1 class="title">
-    Ajouter Boulot
+
+  <h1 class="title" *ngIf="id ,else add_title">
+    Modifier Boulot
   </h1>
+  <ng-template #add_title>
+    <h1 class="title">
+      Ajouter Boulot
+    </h1>
+  </ng-template>
+
   <form>
     <div style="display: flex; justify-content:space-between;">
       <div style="width: 49%;">
@@ -40,12 +47,11 @@
 
     <p class="label-txt">Saisie la date</p>
     <input type="datetime-local" class="input" min="{{ajoutboulot.date_debut | date: 'yyyy-MM-dd'}}"
-      [(ngModel)]="ajoutboulot.date_fin"  name="universite"
-      #universite="ngModel" required>
+      [(ngModel)]="ajoutboulot.date_fin" name="universite" #universite="ngModel" required>
     <div class="line-box">
       <div class="line"></div>
     </div>
-    
+
     <button type="submit" *ngIf="id ,else add" (click)="modifyBoulot()">Modifier boulot</button>
     <ng-template #add>
       <button type="submit" (click)="AddBoulot()">Ajout boulot</button>

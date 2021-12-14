@@ -18,9 +18,9 @@ body {
 }
 .contrats_container {
   width: 54vw;
-  min-height: 400px;
   margin: 2vw;
   background: #e9ecec;
+  height: max-content;
   border-radius: 20px;
   -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.185);
@@ -44,13 +44,27 @@ body {
 .demande:last-child {
   border-radius: 0px 0px 10px 10px;
 }
-
+.rejected_demande_detail{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: default;
+  
+}
 .demande_detail{
     width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    
 }
+
+.demande_detail:hover{
+  cursor: pointer;
+  
+}
+
 .demande_choice{
     width: 40%;
     display: flex;
@@ -79,15 +93,37 @@ body {
   border-radius: 15px;
   background-color: #ffffffe3;
 }
+
+.avis_container{
+  margin: 1vw;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #ffffffe3;
+}
+.contrat_container{
+  margin: 1vw;
+  padding: 10px;
+  border-radius: 15px;
+}
 .mat-chip {
   background-color: rgb(221, 220, 220);
   color: rgb(0, 140, 255);
 }
-
+.mat-icon{
+  align-items: center;
+  
+}
 .mat-button {
+  align-items: center;
   margin: 0px 5px;
   border-radius: 40px !important;
   color: #0066ff;
+}
+
+.avis_btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
 }
 
 .mat-button:hover {
