@@ -6,6 +6,7 @@ import { AuthRecruteurGuard } from './helpers/auth-recruteur.guard';
 import { ConsultcontratComponent } from './pages/admin/consultcontrat/consultcontrat.component';
 import { ConsultetudiantComponent } from './pages/admin/consultetudiant/consultetudiant.component';
 import { ConsultrecruteurComponent } from './pages/admin/consultrecruteur/consultrecruteur.component';
+import { ConsultsignalerComponent } from './pages/admin/consultsignaler/consultsignaler.component';
 
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
@@ -19,6 +20,7 @@ import { DemandeBoulotComponent } from './pages/etudiant/demande-boulot/demande-
 import { EtudiantComponent } from './pages/etudiant/etudiant.component';
 import { HomeEtudiantComponent } from './pages/etudiant/home-etudiant/home-etudiant.component';
 import { ProfileEtudiantComponent } from './pages/etudiant/profile-etudiant/profile-etudiant.component';
+import { SignalerrecruteurComponent } from './pages/etudiant/signalerrecruteur/signalerrecruteur.component';
 import { AjoutBoulotComponent } from './pages/recruteur/ajout-boulot/ajout-boulot.component';
 import { DemandesComponent } from './pages/recruteur/demandes/demandes.component';
 import { HomeRecruteurComponent } from './pages/recruteur/home-recruteur/home-recruteur.component';
@@ -40,7 +42,8 @@ const routes: Routes = [
       { path: 'avis', component: WelcomeComponent },
       { path: 'carte', component: WelcomeComponent },
       { path: 'boulot/:id', component:DemandeBoulotComponent},
-      { path: 'consulter/recruteurs', component:ConsulterRecruteurComponent}
+      { path: 'consulter/recruteurs', component:ConsulterRecruteurComponent},
+      { path: 'signaler/:id', component:SignalerrecruteurComponent}
 
     ],
   },
@@ -75,6 +78,7 @@ const routes: Routes = [
       { path: 'consultetudiant', component:ConsultetudiantComponent},
       { path: 'consultrecruteur', component:ConsultrecruteurComponent},
       { path: 'consultcontrat', component:ConsultcontratComponent},
+      { path: 'consultsignaler', component:ConsultsignalerComponent},
 
     ],
   },

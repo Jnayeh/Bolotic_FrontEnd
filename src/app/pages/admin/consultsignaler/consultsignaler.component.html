@@ -1,0 +1,32 @@
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<h1 class="title">
+  La liste des signaliement
+</h1>
+<form>
+<div *ngFor="let consult of signalers; let index=index">
+  <div style="display: flex; justify-content:space-between;">
+    <div style="width: 49%;">
+      <label>
+        <p class="label-txt">Description</p>
+        <input type="text" class="input" value="{{consult.description}}" name="prenom"
+       required>
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+        <input type="text" class="input" value="{{consult.recruteur}}" name="recruteur"
+        required>
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+          <input type="text" class="input" value="{{consult.etudiant}}" name="recruteur"
+          required>
+      </label>
+    </div>
+  </div>
+</div>
+</form>

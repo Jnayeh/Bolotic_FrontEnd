@@ -44,6 +44,7 @@ import { ConsultrecruteurComponent } from './pages/admin/consultrecruteur/consul
 import { DemandesComponent } from './pages/recruteur/demandes/demandes.component';
 import { ConsultcontratComponent } from './pages/admin/consultcontrat/consultcontrat.component';
 import { SignalerrecruteurComponent } from './pages/etudiant/signalerrecruteur/signalerrecruteur.component';
+import { ConsultsignalerComponent } from './pages/admin/consultsignaler/consultsignaler.component';
 
 
 
@@ -74,6 +75,7 @@ import { SignalerrecruteurComponent } from './pages/etudiant/signalerrecruteur/s
     DemandesComponent,
     ConsultcontratComponent,
     SignalerrecruteurComponent,
+    ConsultsignalerComponent,
   ],
   imports: [
     BrowserModule,
