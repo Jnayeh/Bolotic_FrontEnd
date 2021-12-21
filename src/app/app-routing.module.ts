@@ -24,13 +24,13 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  { path: 'SignUpEtudiant', component: InscritEtudiantComponent },
-  { path: 'SignUpRecruteur', component: InscritRecruteurComponent },
-  { path: 'LoginAdmin', component: LoginAdminComponent },
-  { path: 'LogIn', component: LoginComponent },
+  { path: 'Bolotic_FrontEnd/SignUpEtudiant', component: InscritEtudiantComponent },
+  { path: 'Bolotic_FrontEnd/SignUpRecruteur', component: InscritRecruteurComponent },
+  { path: 'Bolotic_FrontEnd/LoginAdmin', component: LoginAdminComponent },
+  { path: 'Bolotic_FrontEnd/LogIn', component: LoginComponent },
 
   {
-    path: 'etudiant', component: EtudiantComponent,canActivate: [AuthEtudiantGuard],
+    path: 'Bolotic_FrontEnd/etudiant', component: EtudiantComponent,canActivate: [AuthEtudiantGuard],
     children: [
       { path: 'home', component: HomeEtudiantComponent },
       { path: 'profil', component: ProfileEtudiantComponent },
@@ -42,7 +42,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'recruteur', component: RecruteurComponent,canActivate: [AuthRecruteurGuard],
+    path: 'Bolotic_FrontEnd/recruteur', component: RecruteurComponent,canActivate: [AuthRecruteurGuard],
     children: [
       { path: 'home', component: HomeRecruteurComponent },
       { path: 'profil', component: ProfileEtudiantComponent },
@@ -61,7 +61,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'admin',
+    path: 'Bolotic_FrontEnd/admin',
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'profil', component: WelcomeComponent },
