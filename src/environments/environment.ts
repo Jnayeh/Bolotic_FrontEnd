@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://vast-shelf-83338.herokuapp.com'
+  baseUrl: 'https://bolotic.herokuapp.com/'
 };
 
 /*
