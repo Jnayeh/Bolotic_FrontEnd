@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  
+  baseUrl: 'https://vast-shelf-83338.herokuapp.com'
 };
