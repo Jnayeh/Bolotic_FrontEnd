@@ -16,8 +16,7 @@
     
       <label>
         <p class="label-txt">Description</p>
-        <input type="text" class="input" value="" name="description" [(ngModel)]="test.description"  #description="ngModel"
-       required>
+        <input type="text" class="input" name="description" #description="ngModel"  [(ngModel)]="test.description"   required>
         <button mat-button (click)="Signaler()">
             Signaler
           </button>
