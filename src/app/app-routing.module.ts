@@ -3,10 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthAdminGuard } from './helpers/auth-admin.guard';
 import { AuthEtudiantGuard } from './helpers/auth-etudiant.guard';
 import { AuthRecruteurGuard } from './helpers/auth-recruteur.guard';
-import { ConsultcontratComponent } from './pages/admin/consultcontrat/consultcontrat.component';
-import { ConsultetudiantComponent } from './pages/admin/consultetudiant/consultetudiant.component';
-import { ConsultrecruteurComponent } from './pages/admin/consultrecruteur/consultrecruteur.component';
-import { ConsultsignalerComponent } from './pages/admin/consultsignaler/consultsignaler.component';
 
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
@@ -75,10 +71,6 @@ const routes: Routes = [
       { path: 'avis', component: WelcomeComponent },
       { path: 'contrats', component: WelcomeComponent },
       { path: 'reports', component: WelcomeComponent },
-      { path: 'consultetudiant', component:ConsultetudiantComponent},
-      { path: 'consultrecruteur', component:ConsultrecruteurComponent},
-      { path: 'consultcontrat', component:ConsultcontratComponent},
-      { path: 'consultsignaler', component:ConsultsignalerComponent},
 
     ],
   },
