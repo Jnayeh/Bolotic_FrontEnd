@@ -48,9 +48,22 @@ export class InscritEtudiantComponent implements OnInit {
           this.router.navigate(['/etudiant/home']);
         },
         error: err => {
-          this._snackBar.open(err.error, "Close", {
-            duration: 2000
-          });
+          if (err == "Bad Request") {
+            this._snackBar.open("Invalid credentials", "Close", {
+              duration: 2000
+            });
+          }
+          else if (err == "Conflict") {
+            this._snackBar.open("Etudiant Already Exist. Please Login", "Close", {
+              duration: 2000
+            });
+          }
+          else {
+            this._snackBar.open(err.error, "Close", {
+              duration: 2000
+            });
+
+          }
         }
       })
   }

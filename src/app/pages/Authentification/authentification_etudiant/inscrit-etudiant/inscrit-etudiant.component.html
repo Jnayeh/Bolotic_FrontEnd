@@ -31,7 +31,7 @@
   </div>
   <label>
     <p class="label-txt">Saisie votre email</p>
-    <input type="text" class="input" [(ngModel)]="etudiant.email" name="email"
+    <input type="text" class="input" [(ngModel)]="etudiant.email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
     #email="ngModel" required>
     <div class="line-box" [ngClass]="{'invalid': email.dirty && email.invalid}">
       <div class="line" ></div>
